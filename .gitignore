@@ -7,6 +7,9 @@
 [Ll]ogs/
 MemoryCaptures/
 
+
+
+
 # Unity auto-generated meta files
 *.pidb.meta
 *.pidb
@@ -17,3 +20,5 @@ UserSettings/
 # OS-generated
 .DS_Store
 Thumbs.db
+
+
