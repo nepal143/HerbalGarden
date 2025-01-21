@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\NepalKiScripts\UIScripts\FaceCamera.cs" />
+    <Compile Include="Assets\Scripts\NepalKiScripts\UIScripts\EnableUIOnHandRotation.cs" />
     <Compile Include="Assets\Scripts\MayurKiScripts\GardenScratch.cs" />
   </ItemGroup>
   <ItemGroup>
