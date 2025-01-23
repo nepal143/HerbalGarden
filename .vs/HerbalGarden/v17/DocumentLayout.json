@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\XR Hackathon\\HerbalGarden\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4EF64E4E-300F-36B7-A00C-71D9DA08A423}|Assembly-CSharp.csproj|d:\\xr hackathon\\herbalgarden\\assets\\scripts\\mayurkiscripts\\gardenscratch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EF64E4E-300F-36B7-A00C-71D9DA08A423}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mayurkiscripts\\gardenscratch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|d:\\xr hackathon\\herbalgarden\\assets\\assets (ash)\\terrainsampleassets\\thirdpartynotices.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\assets (ash)\\terrainsampleassets\\thirdpartynotices.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ThirdPartyNotices.txt",
+              "DocumentMoniker": "D:\\XR Hackathon\\HerbalGarden\\Assets\\Assets (Ash)\\TerrainSampleAssets\\ThirdPartyNotices.txt",
+              "RelativeDocumentMoniker": "Assets\\Assets (Ash)\\TerrainSampleAssets\\ThirdPartyNotices.txt",
+              "ToolTip": "D:\\XR Hackathon\\HerbalGarden\\Assets\\Assets (Ash)\\TerrainSampleAssets\\ThirdPartyNotices.txt",
+              "RelativeToolTip": "Assets\\Assets (Ash)\\TerrainSampleAssets\\ThirdPartyNotices.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-01-22T18:22:54.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GardenScratch.cs",
+              "DocumentMoniker": "D:\\XR Hackathon\\HerbalGarden\\Assets\\Scripts\\MayurKiScripts\\GardenScratch.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MayurKiScripts\\GardenScratch.cs",
+              "ToolTip": "D:\\XR Hackathon\\HerbalGarden\\Assets\\Scripts\\MayurKiScripts\\GardenScratch.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MayurKiScripts\\GardenScratch.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T18:15:37.168Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
