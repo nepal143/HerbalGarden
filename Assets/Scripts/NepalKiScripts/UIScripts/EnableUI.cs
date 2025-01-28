@@ -2,11 +2,8 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Reference to the UI element (e.g., panel, button, etc.)
-    public GameObject uiElement;
-
-    // Enable the UI element
-    public void EnableUI()
+    // Enable the specified UI element
+    public void EnableUI(GameObject uiElement)
     {
         if (uiElement != null)
         {
@@ -14,12 +11,12 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("UI Element is not assigned in the inspector.");
+            Debug.LogWarning("UI Element is null. Make sure you pass a valid GameObject.");
         }
     }
 
-    // Disable the UI element
-    public void DisableUI()
+    // Disable the specified UI element
+    public void DisableUI(GameObject uiElement)
     {
         if (uiElement != null)
         {
@@ -27,12 +24,12 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("UI Element is not assigned in the inspector.");
+            Debug.LogWarning("UI Element is null. Make sure you pass a valid GameObject.");
         }
     }
 
-    // Toggle the UI element (Enable if disabled, Disable if enabled)
-    public void ToggleUI()
+    // Toggle the specified UI element (Enable if disabled, Disable if enabled)
+    public void ToggleUI(GameObject uiElement)
     {
         if (uiElement != null)
         {
@@ -40,7 +37,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("UI Element is not assigned in the inspector.");
+            Debug.LogWarning("UI Element is null. Make sure you pass a valid GameObject.");
         }
     }
 }
