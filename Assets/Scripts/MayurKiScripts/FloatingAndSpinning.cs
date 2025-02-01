@@ -114,7 +114,7 @@ public class FloatingObject : MonoBehaviour
             {
                 if (floatingObject.isClone)
                 {
-                    // Pick up the already cloned object
+                    // Pick up an already cloned object
                     grabbedObject = floatingObject.gameObject;
                 }
                 else
@@ -129,6 +129,7 @@ public class FloatingObject : MonoBehaviour
 
                 Rigidbody grabbedRb = grabbedObject.GetComponent<Rigidbody>();
                 grabbedRb.isKinematic = true;
+                grabbedRb.useGravity = false; // Turn off gravity when picked up
 
                 isHolding = true;
             }
@@ -141,6 +142,7 @@ public class FloatingObject : MonoBehaviour
         {
             Rigidbody grabbedRb = grabbedObject.GetComponent<Rigidbody>();
             grabbedRb.isKinematic = false;
+            grabbedRb.useGravity = true; // Turn on gravity when released
             grabbedObject = null;
         }
         isHolding = false;
