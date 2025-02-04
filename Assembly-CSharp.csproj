@@ -65,7 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MayurKiScripts\FloatingAndSpinning.cs" />
+    <Compile Include="Assets\Scripts\NepalKiScripts\Plant\PlantMining.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Scripts\NepalKiScripts\Shovel\AttachToShovel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Authentication\AuthApiManager.cs" />
     <Compile Include="Assets\Scripts\NepalKiScripts\UIScripts\FaceCamera.cs" />
