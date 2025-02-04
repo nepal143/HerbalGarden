@@ -20,4 +20,9 @@ public class SceneChanger : MonoBehaviour
             Debug.LogWarning("Scene name is not set in the inspector!");
         }
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
