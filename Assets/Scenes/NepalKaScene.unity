@@ -415,6 +415,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!4 &106611850 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9014170783705847996, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 144155627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &144155627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -583,6 +588,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5228504514348830222, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: handControllerParent
+      value: 
+      objectReference: {fileID: 106611850}
+    - target: {fileID: 5228504514348830222, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: inventoryItems.Array.data[0].itemPrefab
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: 127484843f4049d45a64249f27d9141c, type: 3}
     - target: {fileID: 6096794742728028631, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
