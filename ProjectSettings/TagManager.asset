@@ -16,6 +16,7 @@ TagManager:
   - SafedMusli
   - Tulsi
   - Turmeric
+  - Shovel
   layers:
   - Default
   - TransparentFX
