@@ -15,7 +15,13 @@ public class FloatingObject : MonoBehaviour
     [Header("VR Grab Settings")]
     public Transform rightHandRay;
     public InputActionProperty grabAction;
+    public InputActionProperty moveCloserAction;  // A button (move object closer)
+    public InputActionProperty moveFartherAction; // B button (move object farther)
     public float grabOffset = 5f;
+    public float cloneScale = 0.5f; // Scale of cloned object (modifiable in editor)
+    public float moveStep = 0.2f; // How much to move per button press
+    public float minGrabOffset = 1f; // Min distance from controller
+    public float maxGrabOffset = 10f; // Max distance from controller
 
     private Vector3 startPosition;
     private Vector3 originalScale;
@@ -50,6 +56,7 @@ public class FloatingObject : MonoBehaviour
 
         HandleVRGazeScaling();
         HandleVRGrab();
+        HandleObjectDistance(); // New function to move object closer/farther
     }
 
     void HandleVRGazeScaling()
@@ -101,6 +108,26 @@ public class FloatingObject : MonoBehaviour
         }
     }
 
+    void HandleObjectDistance()
+    {
+        if (isHolding && grabbedObject != null)
+        {
+            // Move object closer when A button is pressed
+            if (moveCloserAction.action.WasPressedThisFrame())
+            {
+                grabOffset -= moveStep;
+                grabOffset = Mathf.Clamp(grabOffset, minGrabOffset, maxGrabOffset); // Prevent extreme values
+            }
+
+            // Move object farther when B button is pressed
+            if (moveFartherAction.action.WasPressedThisFrame())
+            {
+                grabOffset += moveStep;
+                grabOffset = Mathf.Clamp(grabOffset, minGrabOffset, maxGrabOffset);
+            }
+        }
+    }
+
     void TryGrabObject()
     {
         Ray ray = new Ray(vrController.position, vrController.forward);
@@ -121,7 +148,7 @@ public class FloatingObject : MonoBehaviour
                 {
                     // Create a new clone
                     grabbedObject = Instantiate(gameObject, rightHandRay.position + rightHandRay.forward * grabOffset, rightHandRay.rotation);
-                    grabbedObject.transform.localScale = Vector3.one;
+                    grabbedObject.transform.localScale = Vector3.one * cloneScale; // Set clone scale
 
                     FloatingObject cloneScript = grabbedObject.GetComponent<FloatingObject>();
                     cloneScript.isClone = true;

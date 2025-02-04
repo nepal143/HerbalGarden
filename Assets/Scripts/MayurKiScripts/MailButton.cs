@@ -1,37 +1,87 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
+using System.IO;
+using System;
 
-public class MailSystem : MonoBehaviour
+[System.Serializable]
+public class MailEntry
 {
-    public GameObject mailPanel; // Reference to the mail panel
-    public TextMeshProUGUI mailText; // Reference to the text inside the panel
-    public Button closeButton; // Reference to the close button
-    public Image buttonImage; // Reference to the button's image (for transparency change)
+    public int id;
+    public string subject;
+    public string body;
+}
 
-    [TextArea(3, 10)]
-    public string mailContent; // Mail content for this button
+[System.Serializable]
+public class MailList
+{
+    public List<MailEntry> mails;
+}
 
-    private bool isRead = false; // Track if the mail has been read
+public class MailButton : MonoBehaviour
+{
+    public GameObject mailPanel;
+    public TextMeshProUGUI mailText;
+    public Button closeButton;
+    public Image buttonImage;
+
+    private bool isRead = false;
+    private MailList mailData;
+
+    public int mailID; // Assign a unique ID to each button in the Inspector
 
     private void Start()
     {
+        LoadMailData();
+
         if (mailPanel != null)
-            mailPanel.SetActive(false); // Keep panel hidden initially
+            mailPanel.SetActive(false);
 
         if (closeButton != null)
             closeButton.onClick.AddListener(CloseMail);
     }
 
+    void LoadMailData()
+    {
+        string filePath = Path.Combine(Application.streamingAssetsPath, "mails.json");
+
+        if (File.Exists(filePath))
+        {
+            try
+            {
+                string jsonText = File.ReadAllText(filePath);
+                mailData = JsonUtility.FromJson<MailList>(jsonText);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("Error reading JSON file: " + e.Message);
+            }
+        }
+        else
+        {
+            Debug.LogError("Mail JSON file not found at: " + filePath);
+        }
+    }
+
     public void OpenMail()
     {
-        if (mailPanel != null && mailText != null)
+        if (mailPanel != null && mailText != null && mailData != null)
         {
-            mailText.text = mailContent; // Update mail content
-            mailPanel.SetActive(true); // Show panel
+            MailEntry mail = mailData.mails.Find(m => m.id == mailID);
+            if (mail != null)
+            {
+                mailText.text = $"Subject: {mail.subject}\n\n{mail.body}";
+                mailPanel.SetActive(true);
+            }
+            else
+            {
+                mailText.text = "No mail found.";
+                mailPanel.SetActive(true);
+            }
         }
 
-        if (!isRead) // Only change transparency the first time
+        if (!isRead)
         {
             SetButtonTransparency(0.5f);
             isRead = true;
@@ -41,7 +91,7 @@ public class MailSystem : MonoBehaviour
     private void CloseMail()
     {
         if (mailPanel != null)
-            mailPanel.SetActive(false); // Hide panel
+            mailPanel.SetActive(false);
     }
 
     private void SetButtonTransparency(float alpha)
@@ -49,7 +99,7 @@ public class MailSystem : MonoBehaviour
         if (buttonImage != null)
         {
             Color color = buttonImage.color;
-            color.a = alpha; // Set new transparency
+            color.a = alpha;
             buttonImage.color = color;
         }
     }
