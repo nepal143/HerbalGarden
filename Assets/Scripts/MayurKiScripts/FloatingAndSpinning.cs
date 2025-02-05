@@ -129,39 +129,40 @@ public class FloatingObject : MonoBehaviour
     }
 
     void TryGrabObject()
+{
+    Ray ray = new Ray(vrController.position, vrController.forward);
+    RaycastHit hit;
+
+    if (Physics.Raycast(ray, out hit, gazeDistance))
     {
-        Ray ray = new Ray(vrController.position, vrController.forward);
-        RaycastHit hit;
+        FloatingObject floatingObject = hit.transform.GetComponent<FloatingObject>();
 
-        if (Physics.Raycast(ray, out hit, gazeDistance))
+        if (floatingObject != null)
         {
-            FloatingObject floatingObject = hit.transform.GetComponent<FloatingObject>();
-
-            if (floatingObject != null)
+            if (floatingObject.isClone)
             {
-                if (floatingObject.isClone)
-                {
-                    // Pick up an already cloned object
-                    grabbedObject = floatingObject.gameObject;
-                }
-                else
-                {
-                    // Create a new clone
-                    grabbedObject = Instantiate(gameObject, rightHandRay.position + rightHandRay.forward * grabOffset, rightHandRay.rotation);
-                    grabbedObject.transform.localScale = Vector3.one * cloneScale; // Set clone scale
-
-                    FloatingObject cloneScript = grabbedObject.GetComponent<FloatingObject>();
-                    cloneScript.isClone = true;
-                }
-
-                Rigidbody grabbedRb = grabbedObject.GetComponent<Rigidbody>();
-                grabbedRb.isKinematic = true;
-                grabbedRb.useGravity = false; // Turn off gravity when picked up
-
-                isHolding = true;
+                // Pick up an already cloned object
+                grabbedObject = floatingObject.gameObject;
             }
+            else
+            {
+                // Clone the object that was hit (hovered)
+                grabbedObject = Instantiate(hit.transform.gameObject, rightHandRay.position + rightHandRay.forward * grabOffset, rightHandRay.rotation);
+                grabbedObject.transform.localScale = Vector3.one * cloneScale; // Set clone scale
+
+                FloatingObject cloneScript = grabbedObject.GetComponent<FloatingObject>();
+                cloneScript.isClone = true;
+            }
+
+            Rigidbody grabbedRb = grabbedObject.GetComponent<Rigidbody>();
+            grabbedRb.isKinematic = true;
+            grabbedRb.useGravity = false; // Turn off gravity when picked up
+
+            isHolding = true;
         }
     }
+}
+
 
     void ReleaseObject()
     {
