@@ -103,6 +103,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\MayurKiScripts\DiseaseSelectionButton.cs" />
+    <Compile Include="Assets\Scripts\MayurKiScripts\PlantCollisionTracker.cs" />
     <Compile Include="Assets\Ash\UI\UI\scripts\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\NepalKiScripts\Plant\HoverPlant.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
