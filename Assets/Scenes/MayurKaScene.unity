@@ -367,7 +367,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 789681896}
+  snapPoint: {fileID: 789681895}
+  objectToEnable: {fileID: 367513137}
+  collidersToDisableTrigger:
+  - {fileID: 384794861}
+  - {fileID: 896175633}
+  - {fileID: 10469542}
+  - {fileID: 1150341070}
 --- !u!65 &10469542
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1717,7 +1723,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 114441569}
+  snapPoint: {fileID: 114441568}
+  objectToEnable: {fileID: 1054185596}
+  collidersToDisableTrigger:
+  - {fileID: 536782441}
+  - {fileID: 139506484}
+  - {fileID: 1940302149}
+  - {fileID: 112982155}
 --- !u!65 &112982155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2012,7 +2024,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 114441569}
+  snapPoint: {fileID: 114441568}
+  objectToEnable: {fileID: 1054185596}
+  collidersToDisableTrigger:
+  - {fileID: 536782441}
+  - {fileID: 139506484}
+  - {fileID: 1940302149}
+  - {fileID: 112982155}
 --- !u!65 &139506484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5680,6 +5698,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be5d88e5967472842a672d8a25952d3a, type: 3}
   m_PrefabInstance: {fileID: 1967993028}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &367513137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367513138}
+  m_Layer: 0
+  m_Name: SnapTracker3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &367513138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367513137}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.35, y: 0, z: 1.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1413741420}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &373229110
 GameObject:
   m_ObjectHideFlags: 0
@@ -5866,7 +5915,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 789681896}
+  snapPoint: {fileID: 789681895}
+  objectToEnable: {fileID: 367513137}
+  collidersToDisableTrigger:
+  - {fileID: 384794861}
+  - {fileID: 896175633}
+  - {fileID: 10469542}
+  - {fileID: 1150341070}
 --- !u!65 &384794861
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7841,6 +7896,7 @@ Transform:
   - {fileID: 1576926573}
   - {fileID: 1830352167}
   - {fileID: 527532720}
+  - {fileID: 1912906184}
   m_Father: {fileID: 1245085047}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &500324050
@@ -8568,7 +8624,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 114441569}
+  snapPoint: {fileID: 114441568}
+  objectToEnable: {fileID: 1054185596}
+  collidersToDisableTrigger:
+  - {fileID: 536782441}
+  - {fileID: 139506484}
+  - {fileID: 1940302149}
+  - {fileID: 112982155}
 --- !u!65 &536782441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8961,7 +9023,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 715633561}
+  snapPoint: {fileID: 715633560}
+  objectToEnable: {fileID: 1512250257}
+  collidersToDisableTrigger:
+  - {fileID: 2107709735}
+  - {fileID: 1787649185}
+  - {fileID: 559833984}
+  - {fileID: 1272730175}
 --- !u!65 &559833984
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10079,7 +10147,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 527532720}
+  snapPoint: {fileID: 527532719}
+  objectToEnable: {fileID: 1912906183}
+  collidersToDisableTrigger:
+  - {fileID: 925789353}
+  - {fileID: 618260075}
+  - {fileID: 1576926575}
+  - {fileID: 1830352169}
 --- !u!65 &618260075
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14910,7 +14984,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 789681896}
+  snapPoint: {fileID: 789681895}
+  objectToEnable: {fileID: 367513137}
+  collidersToDisableTrigger:
+  - {fileID: 384794861}
+  - {fileID: 896175633}
+  - {fileID: 10469542}
+  - {fileID: 1150341070}
 --- !u!65 &896175633
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15952,7 +16032,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 527532720}
+  snapPoint: {fileID: 527532719}
+  objectToEnable: {fileID: 1912906183}
+  collidersToDisableTrigger:
+  - {fileID: 925789353}
+  - {fileID: 618260075}
+  - {fileID: 1576926575}
+  - {fileID: 1830352169}
 --- !u!65 &925789353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17849,6 +17935,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be5d88e5967472842a672d8a25952d3a, type: 3}
   m_PrefabInstance: {fileID: 2082006218}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1054185596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1054185597}
+  m_Layer: 0
+  m_Name: SnapTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1054185597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054185596}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.43, y: 3.25, z: 1.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1180197546}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1054850760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19985,7 +20102,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 789681896}
+  snapPoint: {fileID: 789681895}
+  objectToEnable: {fileID: 367513137}
+  collidersToDisableTrigger:
+  - {fileID: 384794861}
+  - {fileID: 896175633}
+  - {fileID: 10469542}
+  - {fileID: 1150341070}
 --- !u!65 &1150341070
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20742,6 +20865,7 @@ Transform:
   - {fileID: 1940302147}
   - {fileID: 112982153}
   - {fileID: 114441569}
+  - {fileID: 1054185597}
   m_Father: {fileID: 1245085047}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1203067726
@@ -21963,7 +22087,6 @@ PrefabInstance:
     - target: {fileID: 7696548424635294051, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.87
-      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 7696548424635294051, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22046,8 +22169,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 824638614300596934, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
     m_RemovedGameObjects:
     - {fileID: 824638614300596934, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
     m_AddedGameObjects: []
@@ -22210,7 +22331,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 715633561}
+  snapPoint: {fileID: 715633560}
+  objectToEnable: {fileID: 1512250257}
+  collidersToDisableTrigger:
+  - {fileID: 2107709735}
+  - {fileID: 1787649185}
+  - {fileID: 559833984}
+  - {fileID: 1272730175}
 --- !u!65 &1272730175
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24227,6 +24354,7 @@ Transform:
   - {fileID: 10469540}
   - {fileID: 1150341068}
   - {fileID: 789681896}
+  - {fileID: 367513138}
   m_Father: {fileID: 1245085047}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1413867806
@@ -24263,6 +24391,7 @@ Transform:
   - {fileID: 559833982}
   - {fileID: 1272730173}
   - {fileID: 715633561}
+  - {fileID: 1512250258}
   m_Father: {fileID: 1245085047}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1415151064
@@ -26257,6 +26386,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502048045}
   m_CullTransparentMesh: 1
+--- !u!1 &1512250257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1512250258}
+  m_Layer: 0
+  m_Name: SnapTracker2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1512250258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512250257}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4583331, y: 0, z: 1.96}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1413867807}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1512353214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be5d88e5967472842a672d8a25952d3a, type: 3}
@@ -27298,7 +27458,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 527532720}
+  snapPoint: {fileID: 527532719}
+  objectToEnable: {fileID: 1912906183}
+  collidersToDisableTrigger:
+  - {fileID: 925789353}
+  - {fileID: 618260075}
+  - {fileID: 1576926575}
+  - {fileID: 1830352169}
 --- !u!65 &1576926575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30786,7 +30952,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 715633561}
+  snapPoint: {fileID: 715633560}
+  objectToEnable: {fileID: 1512250257}
+  collidersToDisableTrigger:
+  - {fileID: 2107709735}
+  - {fileID: 1787649185}
+  - {fileID: 559833984}
+  - {fileID: 1272730175}
 --- !u!65 &1787649185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31873,7 +32045,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 527532720}
+  snapPoint: {fileID: 527532719}
+  objectToEnable: {fileID: 1912906183}
+  collidersToDisableTrigger:
+  - {fileID: 925789353}
+  - {fileID: 618260075}
+  - {fileID: 1576926575}
+  - {fileID: 1830352169}
 --- !u!65 &1830352169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33195,6 +33373,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be5d88e5967472842a672d8a25952d3a, type: 3}
+--- !u!1 &1912906183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1912906184}
+  m_Layer: 0
+  m_Name: SnapTracker4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1912906184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912906183}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.38, y: 0, z: 1.96}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 498409121}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1920165242
 GameObject:
   m_ObjectHideFlags: 0
@@ -33598,7 +33807,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 114441569}
+  snapPoint: {fileID: 114441568}
+  objectToEnable: {fileID: 1054185596}
+  collidersToDisableTrigger:
+  - {fileID: 536782441}
+  - {fileID: 139506484}
+  - {fileID: 1940302149}
+  - {fileID: 112982155}
 --- !u!65 &1940302149
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35720,7 +35935,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32d08516a83ba46a7697b54b8579dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 715633561}
+  snapPoint: {fileID: 715633560}
+  objectToEnable: {fileID: 1512250257}
+  collidersToDisableTrigger:
+  - {fileID: 2107709735}
+  - {fileID: 1787649185}
+  - {fileID: 559833984}
+  - {fileID: 1272730175}
 --- !u!65 &2107709735
 BoxCollider:
   m_ObjectHideFlags: 0
