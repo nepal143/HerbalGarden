@@ -7,6 +7,7 @@ public class PlantManager : MonoBehaviour
 
     public GameObject snapPoint; // Reference to the Snap Point GameObject
     public Collider[] collidersToEnable; // Array of colliders to set isTrigger = true
+    public Collider colliderToEnableOnRelease; // Collider to enable when releasing plant
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,6 +32,13 @@ public class PlantManager : MonoBehaviour
                 rb.isKinematic = false;
                 Debug.Log("Released plant: " + detectedPlant.name);
             }
+        }
+
+        // ✅ Enable the assigned collider
+        if (colliderToEnableOnRelease != null)
+        {
+            colliderToEnableOnRelease.enabled = true;
+            Debug.Log("Enabled collider: " + colliderToEnableOnRelease.gameObject.name);
         }
     }
 
