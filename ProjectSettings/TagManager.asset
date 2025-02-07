@@ -18,6 +18,7 @@ TagManager:
   - Turmeric
   - Shovel
   - Plant
+  - InventoryItem
   layers:
   - Default
   - TransparentFX
