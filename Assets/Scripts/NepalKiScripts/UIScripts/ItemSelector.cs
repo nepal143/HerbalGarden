@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems; // Required for pointer events
 
-public class ItemSelector : MonoBehaviour
+public class ItemSelector : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public string itemName; // Name of the item (should match the inventory item)
-
-    // Make the inventoryManager public so it can be accessed by other scripts
-    public VRInventoryManager inventoryManager; 
+    public VRInventoryManager inventoryManager; // Reference to the inventory manager
 
     void Start()
     {
@@ -17,16 +16,25 @@ public class ItemSelector : MonoBehaviour
         }
     }
 
-    // This will be triggered when the item is clicked
-    public void OnItemClicked()
+    // Called when the button is pressed
+    public void OnPointerDown(PointerEventData eventData)
     {
         if (inventoryManager != null)
         {
-            inventoryManager.SelectItem(itemName); // Call the SelectItem function in the InventoryManager
+            inventoryManager.SelectItem(itemName);
         }
         else
         {
             Debug.LogError("InventoryManager not found!");
+        }
+    }
+
+    // Called when the button is released
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if (inventoryManager != null)
+        {
+            inventoryManager.DeselectItem();
         }
     }
 }
