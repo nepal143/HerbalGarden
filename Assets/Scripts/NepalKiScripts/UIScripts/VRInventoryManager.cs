@@ -28,6 +28,14 @@ public class VRInventoryManager : MonoBehaviour
         GenerateInventoryUI();
     }
 
+    void Update()
+    {
+        if (Input.GetMouseButtonUp(0)) // Detects when left mouse button is released
+        {
+            DeselectItem();
+        }
+    }
+
     // Finds empty inventory slots and spawns UI images inside them
     public void GenerateInventoryUI()
     {
@@ -50,7 +58,7 @@ public class VRInventoryManager : MonoBehaviour
                 Button button = uiElement.GetComponent<Button>();
                 if (button != null)
                 {
-                    button.onClick.AddListener(itemSelector.OnItemClicked); // Add listener for button click
+                    button.onClick.AddListener(() => SelectItem(item.itemName)); // Add listener for button click
                 }
             }
             i++;
@@ -80,6 +88,17 @@ public class VRInventoryManager : MonoBehaviour
         else
         {
             Debug.LogError($"Item {itemName} not found!");
+        }
+    }
+
+    // Function to deselect the current item
+    public void DeselectItem()
+    {
+        if (currentItem != null)
+        {
+            Destroy(currentItem); // Remove the current item
+            currentItem = null;
+            ToggleHandMeshes(true); // Show hand meshes again
         }
     }
 
