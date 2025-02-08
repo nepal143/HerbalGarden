@@ -33,23 +33,27 @@ public class BaseplateCollision : MonoBehaviour
                 Debug.Log("Enabled Canvas: " + canvasToEnable.name);
             }
 
-            // Assign the button click event
+            // Assign the button click event **dynamically**
             if (storePlantButton != null)
             {
-                storePlantButton.onClick.RemoveAllListeners(); // Remove old events
-                storePlantButton.onClick.AddListener(StorePlant);
-                Debug.Log("Button set up to store the plant.");
+                storePlantButton.onClick.RemoveAllListeners(); // Clear previous listeners
+                storePlantButton.onClick.AddListener(() => StorePlant(detectedPlant)); // Use a lambda function
+                Debug.Log("Button set up to store the plant: " + detectedPlant.name);
             }
         }
     }
 
-    // Function called when the button is pressed
-    private void StorePlant()
+    // Function to store the detected plant
+    private void StorePlant(GameObject plant)
     {
-        if (detectedPlant != null && plantStorage != null)
+        if (plant != null && plantStorage != null)
         {
-            plantStorage.AddPlant(detectedPlant);
-            Debug.Log("Stored plant: " + detectedPlant.name);
+            plantStorage.AddPlant(plant);
+            Debug.Log("Stored plant: " + plant.name);
+        }
+        else
+        {
+            Debug.LogWarning("No detected plant to store or PlantStorage is missing!");
         }
     }
 }
