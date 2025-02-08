@@ -22747,6 +22747,63 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7349603237585004480, guid: eed9f6d63208e98409d1eebbe63717cc, type: 3}
+--- !u!1001 &4650452466654663291
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 222380422901137402, guid: 961ff6320fd350b44adb38d20392449c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 57.208
+      objectReference: {fileID: 0}
+    - target: {fileID: 222380422901137402, guid: 961ff6320fd350b44adb38d20392449c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.262
+      objectReference: {fileID: 0}
+    - target: {fileID: 222380422901137402, guid: 961ff6320fd350b44adb38d20392449c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 73.972
+      objectReference: {fileID: 0}
+    - target: {fileID: 222380422901137402, guid: 961ff6320fd350b44adb38d20392449c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.65785766
+      objectReference: {fileID: 0}
+    - target: {fileID: 222380422901137402, guid: 961ff6320fd350b44adb38d20392449c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.65785784
+      objectReference: {fileID: 0}
+    - target: {fileID: 222380422901137402, guid: 961ff6320fd350b44adb38d20392449c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.25927436
+      objectReference: {fileID: 0}
+    - target: {fileID: 222380422901137402, guid: 961ff6320fd350b44adb38d20392449c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.25927433
+      objectReference: {fileID: 0}
+    - target: {fileID: 222380422901137402, guid: 961ff6320fd350b44adb38d20392449c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 222380422901137402, guid: 961ff6320fd350b44adb38d20392449c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 222380422901137402, guid: 961ff6320fd350b44adb38d20392449c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -43.021
+      objectReference: {fileID: 0}
+    - target: {fileID: 602881456673760576, guid: 961ff6320fd350b44adb38d20392449c, type: 3}
+      propertyPath: m_Name
+      value: Pokedex
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 961ff6320fd350b44adb38d20392449c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -22757,3 +22814,4 @@ SceneRoots:
   - {fileID: 636205263}
   - {fileID: 2140237285}
   - {fileID: 1788863709}
+  - {fileID: 4650452466654663291}
