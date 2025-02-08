@@ -3,20 +3,26 @@ using UnityEngine;
 public class PlantManager : MonoBehaviour
 {
     public GameObject detectedPlant; // Stores the detected plant
-    private bool hasDetectedPlant = false; // Ensures only one plant is assigned
 
     public GameObject snapPoint; // Reference to the Snap Point GameObject
     public Collider[] collidersToEnable; // Array of colliders to set isTrigger = true
-    public Collider colliderToEnableOnRelease; // Collider to enable when releasing plant
+    public GameObject gameObjectToEnableOnRelease; // GameObject to enable when releasing plant
+
+    private void Update()
+    {
+        // Check if detected plant was destroyed externally
+        if (detectedPlant == null || detectedPlant.Equals(null)) 
+        {
+            detectedPlant = null; // Reset reference
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (hasDetectedPlant) return; // Ignore further detections
-
-        if (other.CompareTag("Plant"))
+        // Allow detection every time a new plant is found
+        if (other.CompareTag("Plant")) 
         {
             detectedPlant = other.gameObject;
-            hasDetectedPlant = true;
             Debug.Log("Plant detected and stored: " + detectedPlant.name);
         }
     }
@@ -34,11 +40,19 @@ public class PlantManager : MonoBehaviour
             }
         }
 
-        // ✅ Enable the assigned collider
-        if (colliderToEnableOnRelease != null)
+        // ✅ Enable the assigned GameObject
+        if (gameObjectToEnableOnRelease != null)
         {
-            colliderToEnableOnRelease.enabled = true;
-            Debug.Log("Enabled collider: " + colliderToEnableOnRelease.gameObject.name);
+            gameObjectToEnableOnRelease.SetActive(true);
+            Debug.Log("Enabled GameObject: " + gameObjectToEnableOnRelease.name);
+
+            // ✅ Also enable its collider if it has one
+            Collider objCollider = gameObjectToEnableOnRelease.GetComponent<Collider>();
+            if (objCollider != null)
+            {
+                objCollider.enabled = true;
+                Debug.Log("Enabled Collider for: " + gameObjectToEnableOnRelease.name);
+            }
         }
     }
 
@@ -49,7 +63,7 @@ public class PlantManager : MonoBehaviour
         {
             Debug.Log("Deleting plant: " + detectedPlant.name);
             Destroy(detectedPlant);
-            detectedPlant = null; // Reset reference
+            detectedPlant = null; // ✅ Reset reference
         }
 
         // Enable snap point if assigned
