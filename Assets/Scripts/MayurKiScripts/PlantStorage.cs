@@ -24,6 +24,11 @@ public class PlantStorage : MonoBehaviour
     private MedicineList medicineData; // Stores parsed JSON data
 
     public Image[] panelSlots; // Assign 4 panel UI images in Inspector
+    
+    public GameObject[] objectsToEnable; // Objects to enable on reset
+    public GameObject[] objectsToDisable; // Objects to disable on reset
+    public GameObject[] objectsWithTriggersToEnable; // Objects whose triggers should be enabled
+    public GameObject[] objectsWithCollidersToDisable; // Objects whose colliders should be disabled
 
     private void Start()
     {
@@ -115,5 +120,69 @@ public class PlantStorage : MonoBehaviour
         {
             panel.color = newColor;
         }
+    }
+
+    // ✅ RESET FUNCTION - NOW ALSO DELETES GAMEOBJECTS
+    public void ResetGame()
+    {
+        // 1️⃣ DELETE ALL STORED GAMEOBJECTS
+        foreach (GameObject plant in storedPlants)
+        {
+            if (plant != null)
+            {
+                Destroy(plant);
+            }
+        }
+        storedPlants.Clear(); // Empty the list
+
+        // 2️⃣ Reset panel colors to #FFFFFF (white)
+        foreach (Image panel in panelSlots)
+        {
+            panel.color = Color.white;
+        }
+
+        // 3️⃣ Enable multiple GameObjects
+        foreach (GameObject obj in objectsToEnable)
+        {
+            if (obj != null) obj.SetActive(true);
+        }
+
+        // 4️⃣ Disable multiple GameObjects
+        foreach (GameObject obj in objectsToDisable)
+        {
+            if (obj != null) obj.SetActive(false);
+        }
+
+        // 5️⃣ Enable trigger colliders
+        foreach (GameObject obj in objectsWithTriggersToEnable)
+        {
+            Collider collider = obj.GetComponent<Collider>();
+            if (collider != null) collider.isTrigger = true;
+        }
+
+        // 6️⃣ Disable ONLY the colliders of the specified objects (keeping objects active!)
+        foreach (GameObject obj in objectsWithCollidersToDisable)
+        {
+            if (obj != null)
+            {
+                // Get all colliders attached to the object
+                Collider[] colliders = obj.GetComponents<Collider>();
+
+                if (colliders.Length > 0)
+                {
+                    foreach (Collider col in colliders)
+                    {
+                        col.enabled = false; // ❌ Disable only the collider
+                    }
+                    Debug.Log("✅ Collider disabled for: " + obj.name);
+                }
+                else
+                {
+                    Debug.LogWarning("⚠ No collider found on: " + obj.name);
+                }
+            }
+        }
+
+        Debug.Log("🔄 Reset Complete: Objects deleted, panels reset, colliders updated.");
     }
 }
