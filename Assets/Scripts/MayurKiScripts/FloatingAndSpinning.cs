@@ -11,6 +11,7 @@ public class FloatingObject : MonoBehaviour
     public Transform vrController;
     public float gazeDistance = 10f;
     public float multiplyScale = 1.1f;
+    public GameObject infoPanel; // UI Panel to enable when looking at the object
 
     [Header("VR Grab Settings")]
     public Transform rightHandRay;
@@ -44,6 +45,12 @@ public class FloatingObject : MonoBehaviour
         {
             enabled = false;
         }
+
+        // Make sure the panel is initially disabled
+        if (infoPanel != null)
+        {
+            infoPanel.SetActive(false);
+        }
     }
 
     void Update()
@@ -56,7 +63,7 @@ public class FloatingObject : MonoBehaviour
 
         HandleVRGazeScaling();
         HandleVRGrab();
-        HandleObjectDistance(); // New function to move object closer/farther
+        HandleObjectDistance();
     }
 
     void HandleVRGazeScaling()
@@ -87,6 +94,12 @@ public class FloatingObject : MonoBehaviour
             transform.localScale = originalScale;
             isScaled = false;
         }
+
+        // ✅ Show panel only when looking at the object and not holding an object
+        if (infoPanel != null)
+        {
+            infoPanel.SetActive(isLookingAtObject && !isHolding);
+        }
     }
 
     void HandleVRGrab()
@@ -112,14 +125,12 @@ public class FloatingObject : MonoBehaviour
     {
         if (isHolding && grabbedObject != null)
         {
-            // Move object closer when A button is pressed
             if (moveCloserAction.action.WasPressedThisFrame())
             {
                 grabOffset -= moveStep;
-                grabOffset = Mathf.Clamp(grabOffset, minGrabOffset, maxGrabOffset); // Prevent extreme values
+                grabOffset = Mathf.Clamp(grabOffset, minGrabOffset, maxGrabOffset);
             }
 
-            // Move object farther when B button is pressed
             if (moveFartherAction.action.WasPressedThisFrame())
             {
                 grabOffset += moveStep;
@@ -129,40 +140,43 @@ public class FloatingObject : MonoBehaviour
     }
 
     void TryGrabObject()
-{
-    Ray ray = new Ray(vrController.position, vrController.forward);
-    RaycastHit hit;
-
-    if (Physics.Raycast(ray, out hit, gazeDistance))
     {
-        FloatingObject floatingObject = hit.transform.GetComponent<FloatingObject>();
+        Ray ray = new Ray(vrController.position, vrController.forward);
+        RaycastHit hit;
 
-        if (floatingObject != null)
+        if (Physics.Raycast(ray, out hit, gazeDistance))
         {
-            if (floatingObject.isClone)
+            FloatingObject floatingObject = hit.transform.GetComponent<FloatingObject>();
+
+            if (floatingObject != null)
             {
-                // Pick up an already cloned object
-                grabbedObject = floatingObject.gameObject;
+                if (floatingObject.isClone)
+                {
+                    grabbedObject = floatingObject.gameObject;
+                }
+                else
+                {
+                    grabbedObject = Instantiate(hit.transform.gameObject, rightHandRay.position + rightHandRay.forward * grabOffset, rightHandRay.rotation);
+                    grabbedObject.transform.localScale = Vector3.one * cloneScale;
+
+                    FloatingObject cloneScript = grabbedObject.GetComponent<FloatingObject>();
+                    cloneScript.isClone = true;
+                }
+
+                Rigidbody grabbedRb = grabbedObject.GetComponent<Rigidbody>();
+                grabbedRb.isKinematic = true;
+                grabbedRb.useGravity = false;
+
+                isHolding = true;
+
+                // ✅ Disable the panel when grabbing an object
+                if (infoPanel != null)
+                {
+                    infoPanel.SetActive(false);
+                }
             }
-            else
-            {
-                // Clone the object that was hit (hovered)
-                grabbedObject = Instantiate(hit.transform.gameObject, rightHandRay.position + rightHandRay.forward * grabOffset, rightHandRay.rotation);
-                grabbedObject.transform.localScale = Vector3.one * cloneScale; // Set clone scale
-
-                FloatingObject cloneScript = grabbedObject.GetComponent<FloatingObject>();
-                cloneScript.isClone = true;
-            }
-
-            Rigidbody grabbedRb = grabbedObject.GetComponent<Rigidbody>();
-            grabbedRb.isKinematic = true;
-            grabbedRb.useGravity = false; // Turn off gravity when picked up
-
-            isHolding = true;
         }
     }
-}
-
 
     void ReleaseObject()
     {
@@ -170,7 +184,7 @@ public class FloatingObject : MonoBehaviour
         {
             Rigidbody grabbedRb = grabbedObject.GetComponent<Rigidbody>();
             grabbedRb.isKinematic = false;
-            grabbedRb.useGravity = true; // Turn on gravity when released
+            grabbedRb.useGravity = true;
             grabbedObject = null;
         }
         isHolding = false;
