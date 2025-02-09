@@ -2,7 +2,7 @@
     {
         "diseases": ["Common cold", "Flu", "Respiratory issues", "Weakness"],
         "medicine": "Chyawanprash",
-        "ingredients": ["Amla", "Giloy", "Tulsi", "Mulethi", "Neem", "Honey"]
+        "ingredients": ["Amla", "Tulsi", "Mulethi", "Neem"]
     },
     {
         "diseases": ["Indigestion", "Constipation", "Acidity"],
@@ -12,17 +12,17 @@
     {
         "diseases": ["Fatigue", "Anxiety", "Weakness"],
         "medicine": "Ashwagandha Rasayana",
-        "ingredients": ["Ashwagandha", "Safed Musli", "Mulethi", "Honey"]
+        "ingredients": ["Ashwagandha", "Safed Musli", "Mulethi"]
     },
     {
         "diseases": ["Cough", "Cold", "Sore throat", "Flu"],
         "medicine": "Kadha",
-        "ingredients": ["Tulsi", "Mulethi", "Turmeric", "Giloy", "Ginger"]
+        "ingredients": ["Tulsi", "Mulethi", "Turmeric", "Giloy"]
     },
     {
         "diseases": ["Memory loss", "Alzheimer's", "Stress"],
         "medicine": "Brahmi Tonic",
-        "ingredients": ["Brahmi", "Gotu Kola", "Mulethi", "Honey"]
+        "ingredients": ["Brahmi", "Gotu Kola", "Mulethi"]
     },
     {
         "diseases": ["Acne", "Skin infections", "Wounds"],
@@ -32,16 +32,16 @@
     {
         "diseases": ["Diarrhea", "Constipation", "IBS"],
         "medicine": "Bael Syrup",
-        "ingredients": ["Bael", "Amla", "Mulethi", "Honey"]
+        "ingredients": ["Bael", "Amla", "Mulethi"]
     },
     {
         "diseases": ["Erectile dysfunction", "Low energy"],
         "medicine": "Musli Pak",
-        "ingredients": ["Safed Musli", "Ashwagandha", "Mulethi", "Honey"]
+        "ingredients": ["Safed Musli", "Ashwagandha", "Mulethi"]
     },
     {
         "diseases": ["Arthritis", "Infections", "Immunity issues"],
         "medicine": "Turmeric Milk",
-        "ingredients": ["Turmeric", "Mulethi", "Honey"]
+        "ingredients": ["Turmeric", "Mulethi"]
     }
 ]
