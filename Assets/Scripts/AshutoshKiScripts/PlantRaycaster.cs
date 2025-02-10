@@ -1,57 +1,75 @@
-// using UnityEngine;
-
-// public class PlantRaycaster : MonoBehaviour
-// {
-//     public float rayDistance = 10f; // Adjust the distance based on your needs
-//     public UI_Manager uiManager;
-
-//     void Update()
-//     {
-//         // Shoot a raycast from the Pokedex camera
-//         Ray ray = new Ray(transform.position, transform.forward);
-//         if (Physics.Raycast(ray, out RaycastHit hit, rayDistance))
-//         {
-//             // Check if the hit object has a tag matching a plant
-//             string plantTag = hit.collider.tag;
-//             Plant plant = PlantLoader.GetPlantByTag(plantTag);
-
-//             if (plant != null)
-//             {
-//                 // Update the UI with plant details
-//                 uiManager.UpdatePlantDetails(plant);
-//             }
-//         }
-//     }
-// }
-
 using UnityEngine;
 
 public class PlantRaycaster : MonoBehaviour
 {
-    public float rayDistance = 10f; // Adjust the distance based on your needs
+    public float rayDistance = 10f; // Adjust as needed
     public UI_Manager uiManager;
 
     void Update()
     {
         // Shoot a raycast from the Pokedex camera
         Ray ray = new Ray(transform.position, transform.forward);
+        Debug.DrawRay(ray.origin, ray.direction * rayDistance, Color.red); // 🔴 Visual Debug
+
         if (Physics.Raycast(ray, out RaycastHit hit, rayDistance))
         {
-            // Check if the hit object has a tag matching a plant
-            string plantTag = hit.collider.tag;
-            Plant plant = PlantLoader.GetPlantByTag(plantTag);
+            Debug.Log($"🌿 Raycast hit: {hit.collider.name} (Tag: {hit.collider.tag})");
 
-            if (plant != null)
+            // Ensure it's a plant
+            if (!string.IsNullOrEmpty(hit.collider.tag) && hit.collider.tag != "Untagged")
             {
-                // Update the UI with plant details
-                uiManager.UpdatePlantDetails(plant);
-                Debug.Log($"Detected Plant: {plant.name}");
+                Plant plant = PlantLoader.GetPlantByTag(hit.collider.tag);
+                if (plant != null)
+                {
+                    Debug.Log($"✅ Found Plant Data: {plant.name}");
+                    uiManager.UpdatePlantDetails(plant);
+                }
+                else
+                {
+                    Debug.LogWarning($"⚠️ No plant found with tag: {hit.collider.tag}");
+                }
+            }
+            else
+            {
+                Debug.Log("⚠️ Object hit is Untagged, skipping.");
             }
         }
         else
         {
-            // Clear the UI when no plant is detected
-            uiManager.ClearDetails();
+            Debug.Log("❌ Raycast didn't hit anything.");
         }
     }
 }
+
+
+// using UnityEngine;
+
+// public class PlantRaycaster : MonoBehaviour
+// {
+//     public float rayDistance = 10f; // Adjust as needed
+//     public UI_Manager uiManager;
+
+//     void Update()
+//     {
+//         // Cast a ray from the camera's position forward
+//         Ray ray = new Ray(transform.position, transform.forward);
+//         if (Physics.Raycast(ray, out RaycastHit hit, rayDistance))
+//         {
+//             Debug.Log($"🌿 Raycast hit: {hit.collider.gameObject.name}");
+
+//             string plantTag = hit.collider.tag; // Check object's tag
+//             Plant plant = PlantLoader.GetPlantByTag(plantTag);
+
+//             if (plant != null)
+//             {
+//                 Debug.Log($"✅ Plant detected: {plant.name}");
+//                 uiManager.UpdatePlantDetails(plant);
+//             }
+//             else
+//             {
+//                 Debug.LogWarning($"⚠️ No plant found with tag: {plantTag}");
+//             }
+//         }
+//     }
+// }
+

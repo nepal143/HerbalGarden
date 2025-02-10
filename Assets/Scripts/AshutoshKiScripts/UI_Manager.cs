@@ -43,20 +43,23 @@ public class UI_Manager : MonoBehaviour
     {
         if (plant != null)
         {
-            // Populate UI elements with plant details
-            nameText.text = $"Name: {plant.name}";
-            scientificNameText.text = $"Scientific Name: {plant.scientificName}";
-            usesText.text = $"Uses: {plant.uses}";
-            benefitsText.text = $"Benefits: {plant.benefits}";
+            nameText.text = $"🌿 Name: {plant.name}";
+            scientificNameText.text = $"🔬 Scientific Name: {plant.scientificName}";
+            usesText.text = $"💊 Uses: {plant.uses}";
+            benefitsText.text = $"✨ Benefits: {plant.benefits}";
+        }
+        else
+        {
+            ClearDetails();
         }
     }
 
     public void ClearDetails()
     {
-        // Clear UI when no plant is detected
         nameText.text = "";
         scientificNameText.text = "";
         usesText.text = "";
         benefitsText.text = "";
     }
 }
+
