@@ -1,0 +1,70 @@
+{
+    "plants": [
+        {
+            "name": "Amla",
+            "scientificName": "Phyllanthus emblica",
+            "uses": "Rich in Vitamin C, boosts immunity, and promotes healthy skin and hair.",
+            "benefits": "Helps with digestion, strengthens immunity, and promotes better eyesight."
+        },
+        {
+            "name": "Ashwagandha",
+            "scientificName": "Withania somnifera",
+            "uses": "Helps reduce stress, improve energy levels, and enhance brain function.",
+            "benefits": "Supports mental clarity, reduces inflammation, and promotes restful sleep."
+        },
+        {
+            "name": "Bael",
+            "scientificName": "Aegle marmelos",
+            "uses": "Treats diarrhea, dysentery, and other digestive disorders.",
+            "benefits": "Improves gut health, boosts immunity, and acts as a natural coolant."
+        },
+        {
+            "name": "Brahmi",
+            "scientificName": "Bacopa monnieri",
+            "uses": "Improves memory, reduces anxiety, and promotes mental clarity.",
+            "benefits": "Boosts cognitive function, reduces stress, and enhances focus."
+        },
+        {
+            "name": "Giloy",
+            "scientificName": "Tinospora cordifolia",
+            "uses": "Boosts immunity, treats fever, and improves digestion.",
+            "benefits": "Detoxifies the body, strengthens the immune system, and reduces inflammation."
+        },
+        {
+            "name": "Gotu Kola",
+            "scientificName": "Centella asiatica",
+            "uses": "Improves blood circulation, boosts brain function, and heals wounds.",
+            "benefits": "Enhances memory, reduces anxiety, and promotes skin health."
+        },
+        {
+            "name": "Mulethi",
+            "scientificName": "Glycyrrhiza glabra",
+            "uses": "Soothes sore throat, reduces cough, and improves respiratory health.",
+            "benefits": "Relieves acidity, boosts immunity, and promotes digestive health."
+        },
+        {
+            "name": "Neem",
+            "scientificName": "Azadirachta indica",
+            "uses": "Treats skin conditions, purifies blood, and boosts immunity.",
+            "benefits": "Improves skin health, controls diabetes, and promotes oral hygiene."
+        },
+        {
+            "name": "Safed Musli",
+            "scientificName": "Chlorophytum borivilianum",
+            "uses": "Improves strength, enhances stamina, and acts as a natural aphrodisiac.",
+            "benefits": "Boosts vitality, supports muscle growth, and enhances immunity."
+        },
+        {
+            "name": "Tulsi",
+            "scientificName": "Ocimum sanctum",
+            "uses": "Relieves stress, improves respiratory health, and boosts immunity.",
+            "benefits": "Reduces fever, supports heart health, and detoxifies the body."
+        },
+        {
+            "name": "Turmeric",
+            "scientificName": "Curcuma longa",
+            "uses": "Reduces inflammation, treats wounds, and boosts immunity.",
+            "benefits": "Improves skin health, supports joint health, and prevents infections."
+        }
+    ]
+}

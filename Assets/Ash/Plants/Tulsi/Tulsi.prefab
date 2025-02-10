@@ -60,8 +60,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tulsi
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e0f4343c1788be46abea9d70e445487, type: 3}
+      propertyPath: m_TagString
+      value: Tulsi
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e0f4343c1788be46abea9d70e445487, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2354716097283165973}
   m_SourcePrefab: {fileID: 100100000, guid: 1e0f4343c1788be46abea9d70e445487, type: 3}
+--- !u!1 &1001058813105154992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e0f4343c1788be46abea9d70e445487, type: 3}
+  m_PrefabInstance: {fileID: 82490302306522849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &-2354716097283165973
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001058813105154992}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.057845525, y: 0.06045859, z: 0.068223804}
+  m_Center: {x: 0.00257817, y: 0.0017414931, z: 0.03962092}
