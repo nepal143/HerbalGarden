@@ -18,6 +18,7 @@
 // }
 
 
+using System.IO;
 using UnityEngine;
 
 public class PlantLoader : MonoBehaviour
@@ -26,25 +27,24 @@ public class PlantLoader : MonoBehaviour
 
     void Awake()
     {
-        // Load JSON data from Resources folder
-        TextAsset jsonData = Resources.Load<TextAsset>("PlantsData");
-        if (jsonData != null)
+        string filePath = Path.Combine(Application.streamingAssetsPath, "PlantsData.json");
+
+        if (File.Exists(filePath))
         {
-            plantList = JsonUtility.FromJson<PlantList>(jsonData.text);
-            Debug.Log($"Loaded {plantList.plants.Count} plants from JSON.");
+            string jsonData = File.ReadAllText(filePath);
+            plantList = JsonUtility.FromJson<PlantList>(jsonData);
+
+            Debug.Log("✅ JSON Loaded from StreamingAssets!");
+            Debug.Log($"🌿 Total Plants Loaded: {plantList.plants.Count}");
         }
         else
         {
-            Debug.LogError("Failed to load PlantsData.json from Resources.");
+            Debug.LogError($"❌ JSON file not found at: {filePath}");
         }
     }
 
     public static Plant GetPlantByTag(string tagName)
     {
-        if (plantList != null && plantList.plants != null)
-        {
-            return plantList.plants.Find(plant => plant.name == tagName);
-        }
-        return null;
+        return plantList?.plants?.Find(plant => plant.name == tagName);
     }
 }
