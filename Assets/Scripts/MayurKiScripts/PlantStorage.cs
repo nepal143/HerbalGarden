@@ -30,6 +30,9 @@ public class PlantStorage : MonoBehaviour
     public GameObject[] objectsWithTriggersToEnable; // Objects whose triggers should be enabled
     public GameObject[] objectsWithCollidersToDisable; // Objects whose colliders should be disabled
 
+    public Transform spawnPoint; // Spawn point for matched medicine objects
+    public GameObject[] medicinePrefabs; // Array of 4 prefabs to spawn on medicine match
+
     private void Start()
     {
         LoadMedicineData();
@@ -52,7 +55,6 @@ public class PlantStorage : MonoBehaviour
         }
     }
 
-    // ✅ Function to add a plant to storage
     public void AddPlant(GameObject plant)
     {
         if (storedPlants.Count < panelSlots.Length) // Ensure max 4 slots
@@ -74,7 +76,6 @@ public class PlantStorage : MonoBehaviour
         }
     }
 
-    // ✅ Function to update panel colors
     private void UpdatePanelColors()
     {
         for (int i = 0; i < panelSlots.Length; i++)
@@ -90,7 +91,6 @@ public class PlantStorage : MonoBehaviour
         }
     }
 
-    // ✅ Function to check for matching medicine and update panel colors
     public void CheckForMedicine()
     {
         if (medicineData == null)
@@ -102,6 +102,7 @@ public class PlantStorage : MonoBehaviour
         List<string> collectedPlants = storedPlants.Select(p => p.name.Replace("(Clone)", "").Trim()).ToList();
 
         bool foundMedicine = false;
+        string matchedMedicine = "";
 
         foreach (MedicineData medicine in medicineData.medicines)
         {
@@ -109,23 +110,58 @@ public class PlantStorage : MonoBehaviour
             {
                 Debug.Log("✅ Matching Medicine Found: " + medicine.medicine);
                 foundMedicine = true;
-                break; // Stop checking once we find a match
+                matchedMedicine = medicine.medicine;
+                SpawnMedicine();
+                break;
             }
         }
 
-        // ✅ Update panel colors based on result
         Color32 newColor = foundMedicine ? new Color32(0x00, 0xFF, 0x1E, 0xFF) : new Color32(0xFF, 0x0F, 0x00, 0xFF);
 
         foreach (Image panel in panelSlots)
         {
             panel.color = newColor;
         }
+
+        if (foundMedicine)
+        {
+            Debug.Log("📢 Medicine Matched: " + matchedMedicine);
+        }
     }
 
-    // ✅ RESET FUNCTION - NOW ALSO DELETES GAMEOBJECTS
+    private void SpawnMedicine()
+{
+    if (medicinePrefabs.Length > 0 && spawnPoint != null)
+    {
+        int randomIndex = Random.Range(0, medicinePrefabs.Length);
+        GameObject spawnedMedicine = Instantiate(medicinePrefabs[randomIndex], spawnPoint.position, Quaternion.identity);
+
+        // Ensure the spawned object has a valid tag based on the matched medicine
+        if (spawnedMedicine != null)
+        {
+            string matchedMedicine = medicineData.medicines
+                .FirstOrDefault(m => m.ingredients.All(ingredient => storedPlants.Select(p => p.name.Replace("(Clone)", "").Trim()).Contains(ingredient)))
+                ?.medicine;
+
+            if (!string.IsNullOrEmpty(matchedMedicine))
+            {
+                spawnedMedicine.tag = matchedMedicine;
+                Debug.Log($"💊 Medicine Spawned: {matchedMedicine} at {spawnPoint.position} with tag '{matchedMedicine}'");
+            }
+            else
+            {
+                Debug.LogWarning("⚠ No matching medicine found to set the tag.");
+            }
+        }
+    }
+    else
+    {
+        Debug.LogError("❌ No prefabs assigned or spawn point missing!");
+    }
+}
+
     public void ResetGame()
     {
-        // 1️⃣ DELETE ALL STORED GAMEOBJECTS
         foreach (GameObject plant in storedPlants)
         {
             if (plant != null)
@@ -133,46 +169,40 @@ public class PlantStorage : MonoBehaviour
                 Destroy(plant);
             }
         }
-        storedPlants.Clear(); // Empty the list
+        storedPlants.Clear();
 
-        // 2️⃣ Reset panel colors to #FFFFFF (white)
         foreach (Image panel in panelSlots)
         {
             panel.color = Color.white;
         }
 
-        // 3️⃣ Enable multiple GameObjects
         foreach (GameObject obj in objectsToEnable)
         {
             if (obj != null) obj.SetActive(true);
         }
 
-        // 4️⃣ Disable multiple GameObjects
         foreach (GameObject obj in objectsToDisable)
         {
             if (obj != null) obj.SetActive(false);
         }
 
-        // 5️⃣ Enable trigger colliders
         foreach (GameObject obj in objectsWithTriggersToEnable)
         {
             Collider collider = obj.GetComponent<Collider>();
             if (collider != null) collider.isTrigger = true;
         }
 
-        // 6️⃣ Disable ONLY the colliders of the specified objects (keeping objects active!)
         foreach (GameObject obj in objectsWithCollidersToDisable)
         {
             if (obj != null)
             {
-                // Get all colliders attached to the object
                 Collider[] colliders = obj.GetComponents<Collider>();
 
                 if (colliders.Length > 0)
                 {
                     foreach (Collider col in colliders)
                     {
-                        col.enabled = false; // ❌ Disable only the collider
+                        col.enabled = false;
                     }
                     Debug.Log("✅ Collider disabled for: " + obj.name);
                 }

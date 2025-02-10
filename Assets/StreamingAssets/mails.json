@@ -3,47 +3,83 @@
         {
             "id": 1,
             "subject": "Need Remedy for Common Cold, Flu, Respiratory Issues & Weakness",
-            "body": "Dear Healer,\n\nI have been suffering from common cold, flu, respiratory issues, and weakness for the past few days. My body feels tired, and my breathing is not as easy as before. I need a remedy that can help me recover quickly.\n\nPlease provide the right medicine.\n\n- A Patient in Need"
+            "body": "Dear Healer,\n\nI have been suffering from common cold, flu, respiratory issues, and weakness for the past few days. My body feels tired, and my breathing is not as easy as before. I need a remedy that can help me recover quickly.\n\nPlease provide the right medicine.\n\n- A Patient in Need",
+            "medicine": {
+                "name": "Chyawanprash",
+                "ingredients": ["Amla", "Tulsi", "Mulethi", "Neem"]
+            }
         },
         {
             "id": 2,
             "subject": "Severe Indigestion, Constipation, and Acidity Issues",
-            "body": "Dear Healer,\n\nLately, I have been facing indigestion, constipation, and acidity. It’s making my daily life uncomfortable, and I need a solution to fix this.\n\nPlease help me with the correct medicine.\n\n- Concerned Patient"
+            "body": "Dear Healer,\n\nLately, I have been facing indigestion, constipation, and acidity. It’s making my daily life uncomfortable, and I need a solution to fix this.\n\nPlease help me with the correct medicine.\n\n- Concerned Patient",
+            "medicine": {
+                "name": "Triphala Churna",
+                "ingredients": ["Amla", "Bael", "Neem"]
+            }
         },
         {
             "id": 3,
             "subject": "Constant Fatigue, Anxiety, and Weakness",
-            "body": "Dear Healer,\n\nI often feel fatigued, anxious, and weak. My energy levels are low, and I am unable to focus properly. I need something to help me regain my strength and calm my mind.\n\nPlease guide me with the best remedy.\n\n- Exhausted Individual"
+            "body": "Dear Healer,\n\nI often feel fatigued, anxious, and weak. My energy levels are low, and I am unable to focus properly. I need something to help me regain my strength and calm my mind.\n\nPlease guide me with the best remedy.\n\n- Exhausted Individual",
+            "medicine": {
+                "name": "Ashwagandha Rasayana",
+                "ingredients": ["Ashwagandha", "Safed Musli", "Mulethi"]
+            }
         },
         {
             "id": 4,
             "subject": "Persistent Cough, Cold, Sore Throat & Flu",
-            "body": "Dear Healer,\n\nI have a persistent cough, cold, sore throat, and flu symptoms that just won't go away. I feel uncomfortable, and my throat is irritated.\n\nKindly suggest a powerful remedy.\n\n- A Struggling Patient"
+            "body": "Dear Healer,\n\nI have a persistent cough, cold, sore throat, and flu symptoms that just won't go away. I feel uncomfortable, and my throat is irritated.\n\nKindly suggest a powerful remedy.\n\n- A Struggling Patient",
+            "medicine": {
+                "name": "Kadha",
+                "ingredients": ["Tulsi", "Mulethi", "Turmeric", "Giloy"]
+            }
         },
         {
             "id": 5,
             "subject": "Memory Loss, Alzheimer's & High Stress Levels",
-            "body": "Dear Healer,\n\nLately, I have been struggling with memory loss, stress, and trouble focusing. I forget things easily, and my mind feels overloaded. I need a solution to sharpen my memory and reduce stress.\n\nPlease suggest the right medicine.\n\n- Forgetful Patient"
+            "body": "Dear Healer,\n\nLately, I have been struggling with memory loss, stress, and trouble focusing. I forget things easily, and my mind feels overloaded. I need a solution to sharpen my memory and reduce stress.\n\nPlease suggest the right medicine.\n\n- Forgetful Patient",
+            "medicine": {
+                "name": "Brahmi Tonic",
+                "ingredients": ["Brahmi", "Gotu Kola", "Mulethi"]
+            }
         },
         {
             "id": 6,
             "subject": "Acne, Skin Infections, and Wounds",
-            "body": "Dear Healer,\n\nMy skin is constantly breaking out with acne and infections. It is affecting my confidence, and I am looking for a natural remedy to heal my skin and prevent further issues.\n\nKindly provide a solution.\n\n- A Patient in Distress"
+            "body": "Dear Healer,\n\nMy skin is constantly breaking out with acne and infections. It is affecting my confidence, and I am looking for a natural remedy to heal my skin and prevent further issues.\n\nKindly provide a solution.\n\n- A Patient in Distress",
+            "medicine": {
+                "name": "Neem Oil",
+                "ingredients": ["Neem", "Turmeric", "Giloy"]
+            }
         },
         {
             "id": 7,
             "subject": "Digestive Issues – Diarrhea, Constipation, and IBS",
-            "body": "Dear Healer,\n\nI have been suffering from digestive problems like diarrhea, constipation, and irritable bowel syndrome (IBS). It has become a daily struggle for me, and I need a natural solution.\n\nPlease help me with an effective medicine.\n\n- Troubled Patient"
+            "body": "Dear Healer,\n\nI have been suffering from digestive problems like diarrhea, constipation, and irritable bowel syndrome (IBS). It has become a daily struggle for me, and I need a natural solution.\n\nPlease help me with an effective medicine.\n\n- Troubled Patient",
+            "medicine": {
+                "name": "Bael Syrup",
+                "ingredients": ["Bael", "Amla", "Mulethi"]
+            }
         },
         {
             "id": 8,
             "subject": "Low Energy and Erectile Dysfunction",
-            "body": "Dear Healer,\n\nI have been experiencing low energy and other health concerns that are affecting my daily life. I am looking for a powerful herbal remedy to restore my strength and vitality.\n\nPlease suggest a treatment.\n\n- Concerned Individual"
+            "body": "Dear Healer,\n\nI have been experiencing low energy and other health concerns that are affecting my daily life. I am looking for a powerful herbal remedy to restore my strength and vitality.\n\nPlease suggest a treatment.\n\n- Concerned Individual",
+            "medicine": {
+                "name": "Musli Pak",
+                "ingredients": ["Safed Musli", "Ashwagandha", "Mulethi"]
+            }
         },
         {
             "id": 9,
             "subject": "Joint Pain, Infections & Weak Immunity",
-            "body": "Dear Healer,\n\nI have been dealing with arthritis, infections, and low immunity. My joints ache, and I often feel weak. I am looking for a natural way to boost my immune system and relieve my pain.\n\nKindly provide me with an herbal cure.\n\n- A Patient in Pain"
+            "body": "Dear Healer,\n\nI have been dealing with arthritis, infections, and low immunity. My joints ache, and I often feel weak. I am looking for a natural way to boost my immune system and relieve my pain.\n\nKindly provide me with an herbal cure.\n\n- A Patient in Pain",
+            "medicine": {
+                "name": "Turmeric Milk",
+                "ingredients": ["Turmeric", "Mulethi"]
+            }
         }
     ]
 }
