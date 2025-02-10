@@ -5,20 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Inventory
-  - Amla
-  - Ashwagandha
-  - Bael
-  - Brahmi
-  - Giloy
-  - GotuKola
-  - Mulethi
-  - Neem
-  - SafedMusli
-  - Tulsi
-  - Turmeric
   - Shovel
   - Plant
   - InventoryItem
+  - Chyawanprash
+  - Triphala Churna
+  - Ashwagandha Rasayana
+  - Kadha
+  - Brahmi Tonic
+  - Neem Oil
+  - Bael Syrup
+  - Musli Pak
+  - Turmeric Milk
   layers:
   - Default
   - TransparentFX
