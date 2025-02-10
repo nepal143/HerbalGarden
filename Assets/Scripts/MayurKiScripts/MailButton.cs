@@ -103,4 +103,14 @@ public class MailButton : MonoBehaviour
             buttonImage.color = color;
         }
     }
+
+    // ✅ **New Function** to highlight matched mail in green
+    public void HighlightMail()
+    {
+        if (buttonImage != null)
+        {
+            buttonImage.color = new Color(0f, 0.647f, 0.02f); // RGB for #00A503
+            Debug.Log("✅ Mail ID " + mailID + " highlighted as matched.");
+        }
+    }
 }
