@@ -9,6 +9,7 @@ public class MedicineManager : MonoBehaviour
     public GameObject snapPoint; // Reference to the Snap Point GameObject
     public Collider[] collidersToEnable; // Array of colliders to set isTrigger = true
     public GameObject gameObjectToEnableOnRelease; // GameObject to enable when releasing medicine
+    public Canvas canvasToEnable; // Reference to the canvas to be enabled when releasing the medicine
 
     private string jsonPath;
     private string[] medicineTags = {
@@ -46,42 +47,52 @@ public class MedicineManager : MonoBehaviour
 
     // Called when button is pressed to release the medicine
     public void ReleaseMedicine()
+{
+    if (detectedMedicine != null)
     {
-        if (detectedMedicine != null)
+        Rigidbody rb = detectedMedicine.GetComponent<Rigidbody>();
+        if (rb != null)
         {
-            Rigidbody rb = detectedMedicine.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.isKinematic = false;
-                
-                // ✅ Apply upward force
-                rb.AddForce(Vector3.up * 50f, ForceMode.Impulse); 
+            rb.isKinematic = false;
+            rb.AddForce(Vector3.up * 50f, ForceMode.Impulse);
+            Debug.Log("🛠️ Medicine released: " + detectedMedicine.name);
 
-                Debug.Log("🛠️ Medicine released: " + detectedMedicine.name);
-
-                // ✅ Destroy after 1.5s
-                StartCoroutine(DestroyMedicineAfterDelay(detectedMedicine, 1.5f));
-            }
-
-            // ✅ Check mails.json and log the corresponding mail ID
-            CheckMailForMedicine(detectedMedicine.tag);
-        }
-
-        // ✅ Enable the assigned GameObject
-        if (gameObjectToEnableOnRelease != null)
-        {
-            gameObjectToEnableOnRelease.SetActive(true);
-            Debug.Log("✅ Enabled GameObject: " + gameObjectToEnableOnRelease.name);
-
-            // ✅ Also enable its collider if it has one
-            Collider objCollider = gameObjectToEnableOnRelease.GetComponent<Collider>();
-            if (objCollider != null)
-            {
-                objCollider.enabled = true;
-                Debug.Log("✅ Enabled Collider for: " + gameObjectToEnableOnRelease.name);
-            }
+            StartCoroutine(DestroyMedicineAfterDelay(detectedMedicine, 1.5f));
         }
     }
+
+    // ✅ Enable GameObject (if assigned)
+    if (gameObjectToEnableOnRelease != null)
+    {
+        gameObjectToEnableOnRelease.SetActive(true);
+        Debug.Log("✅ Enabled GameObject: " + gameObjectToEnableOnRelease.name);
+
+        Collider objCollider = gameObjectToEnableOnRelease.GetComponent<Collider>();
+        if (objCollider != null)
+        {
+            objCollider.enabled = true;
+            Debug.Log("✅ Enabled Collider for: " + gameObjectToEnableOnRelease.name);
+        }
+    }
+
+    // ✅ Enable Canvas and start delayed mail check
+    if (canvasToEnable != null && !canvasToEnable.isActiveAndEnabled)
+    {
+        canvasToEnable.gameObject.SetActive(true);
+        Debug.Log("✅ Enabled Canvas: " + canvasToEnable.name);
+
+        // 🔄 Start coroutine to check mail after 0.25 seconds
+        StartCoroutine(DelayedMailCheck(detectedMedicine.tag, 0.25f));
+    }
+}
+
+// ✅ Coroutine for delaying mail check
+private IEnumerator DelayedMailCheck(string medicineTag, float delay)
+{
+    yield return new WaitForSeconds(delay);
+    CheckMailForMedicine(medicineTag);
+}
+
 
     // Coroutine to destroy the medicine after a delay
     private IEnumerator DestroyMedicineAfterDelay(GameObject medicine, float delay)
@@ -95,50 +106,49 @@ public class MedicineManager : MonoBehaviour
     }
 
     private void CheckMailForMedicine(string medicineTag)
-{
-    if (!File.Exists(jsonPath))
     {
-        Debug.LogError("❌ mails.json not found at: " + jsonPath);
-        return;
-    }
-
-    string jsonData = File.ReadAllText(jsonPath);
-    MailData mailData = JsonUtility.FromJson<MailData>(jsonData);
-
-    if (mailData == null || mailData.mails == null)
-    {
-        Debug.LogError("❌ Error loading mail data! File might be empty or incorrectly formatted.");
-        return;
-    }
-
-    bool found = false;
-    foreach (var mail in mailData.mails)
-    {
-        if (mail.medicine.name == medicineTag)
+        if (!File.Exists(jsonPath))
         {
-            Debug.Log("✅ Medicine Match Found! Mail ID: " + mail.id + " | Medicine: " + medicineTag);
-            found = true;
+            Debug.LogError("❌ mails.json not found at: " + jsonPath);
+            return;
+        }
 
-            // Find and highlight the mail in UI
-            MailButton[] mailButtons = FindObjectsOfType<MailButton>();
-            foreach (MailButton mailButton in mailButtons)
+        string jsonData = File.ReadAllText(jsonPath);
+        MailData mailData = JsonUtility.FromJson<MailData>(jsonData);
+
+        if (mailData == null || mailData.mails == null)
+        {
+            Debug.LogError("❌ Error loading mail data! File might be empty or incorrectly formatted.");
+            return;
+        }
+
+        bool found = false;
+        foreach (var mail in mailData.mails)
+        {
+            if (mail.medicine.name == medicineTag)
             {
-                if (mailButton.mailID == mail.id)
+                Debug.Log("✅ Medicine Match Found! Mail ID: " + mail.id + " | Medicine: " + medicineTag);
+                found = true;
+
+                // Find and highlight the mail in UI
+                MailButton[] mailButtons = FindObjectsOfType<MailButton>();
+                foreach (MailButton mailButton in mailButtons)
                 {
-                    mailButton.HighlightMail();
-                    break;
+                    if (mailButton.mailID == mail.id)
+                    {
+                        mailButton.HighlightMail();
+                        break;
+                    }
                 }
+                break; // Stop checking after finding the first match
             }
-            break; // Stop checking after finding the first match
+        }
+
+        if (!found)
+        {
+            Debug.Log("⚠️ No matching mail found for medicine: " + medicineTag);
         }
     }
-
-    if (!found)
-    {
-        Debug.Log("⚠️ No matching mail found for medicine: " + medicineTag);
-    }
-}
-
 
     // Called when another button is pressed to delete the medicine & reset scene elements
     public void DeleteMedicine()
