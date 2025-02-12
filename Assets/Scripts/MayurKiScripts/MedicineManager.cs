@@ -57,7 +57,7 @@ public class MedicineManager : MonoBehaviour
             rb.AddForce(Vector3.up * 50f, ForceMode.Impulse);
             Debug.Log("🛠️ Medicine released: " + detectedMedicine.name);
 
-            StartCoroutine(DestroyMedicineAfterDelay(detectedMedicine, 1.5f));
+            StartCoroutine(DestroyMedicineAfterDelay(detectedMedicine, 0.45f));
         }
     }
 
