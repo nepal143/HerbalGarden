@@ -1,82 +1,92 @@
 {
     "plants": [
-      {
-        "id": 1,
-        "name": "Amla",
-        "scientific_name": "Phyllanthus emblica",
-        "description": "Amla, or Indian Gooseberry, is rich in vitamin C and antioxidants, beneficial for immunity, digestion, and skin health.",
-        "habitat": "Grows in tropical and subtropical regions, commonly found in dry, deciduous forests and fertile plains."
-      },
-      {
-        "id": 2,
-        "name": "Tulsi",
-        "scientific_name": "Ocimum sanctum",
-        "description": "Tulsi, also known as Holy Basil, has antimicrobial and anti-inflammatory properties and is widely used in Ayurveda.",
-        "habitat": "Found in warm and humid climates, mainly in plains, gardens, and cultivated fields."
-      },
-      {
-        "id": 3,
-        "name": "Mulethi",
-        "scientific_name": "Glycyrrhiza glabra",
-        "description": "Mulethi (Licorice) is known for its soothing effects on the throat, digestion, and respiratory health.",
-        "habitat": "Thrives in sandy and loamy soils, commonly found in riverbanks and semi-arid regions."
-      },
-      {
-        "id": 4,
-        "name": "Neem",
-        "scientific_name": "Azadirachta indica",
-        "description": "Neem is a powerful antibacterial and antifungal plant, widely used for skin care and medicinal purposes.",
-        "habitat": "Grows in tropical and subtropical climates, often found in dry, arid, and semi-arid regions."
-      },
-      {
-        "id": 5,
-        "name": "Bael",
-        "scientific_name": "Aegle marmelos",
-        "description": "Bael is used for treating digestive disorders, particularly constipation and diarrhea.",
-        "habitat": "Flourishes in dry forests, hilly regions, and well-drained soils."
-      },
-      {
-        "id": 6,
-        "name": "Ashwagandha",
-        "scientific_name": "Withania somnifera",
-        "description": "Ashwagandha is an adaptogenic herb that helps reduce stress, improve energy, and boost immunity.",
-        "habitat": "Found in dry regions, sandy soils, and arid zones."
-      },
-      {
-        "id": 7,
-        "name": "Safed Musli",
-        "scientific_name": "Chlorophytum borivilianum",
-        "description": "Safed Musli is known for its aphrodisiac properties and is used to boost vitality and strength.",
-        "habitat": "Grows in well-drained, loamy soils in subtropical forests and grasslands."
-      },
-      {
-        "id": 8,
-        "name": "Turmeric",
-        "scientific_name": "Curcuma longa",
-        "description": "Turmeric is known for its anti-inflammatory and antioxidant properties, widely used in medicine and cooking.",
-        "habitat": "Prefers warm, humid climates, commonly cultivated in tropical and subtropical regions."
-      },
-      {
-        "id": 9,
-        "name": "Giloy",
-        "scientific_name": "Tinospora cordifolia",
-        "description": "Giloy is an immunity booster and is used to treat fever, infections, and chronic diseases.",
-        "habitat": "Thrives in tropical and subtropical regions, often found climbing on trees in forests and gardens."
-      },
-      {
-        "id": 10,
-        "name": "Brahmi",
-        "scientific_name": "Bacopa monnieri",
-        "description": "Brahmi is well-known for its brain-boosting properties, enhancing memory and cognitive functions.",
-        "habitat": "Grows in wet, marshy areas, near riverbanks and humid tropical environments."
-      },
-      {
-        "id": 11,
-        "name": "Gotu Kola",
-        "scientific_name": "Centella asiatica",
-        "description": "Gotu Kola is a medicinal herb used for improving memory, reducing stress, and healing wounds.",
-        "habitat": "Prefers moist, swampy areas, found in tropical and subtropical climates."
-      }
+        {
+            "id": 1,
+            "name": "Amla",
+            "scientific_name": "Phyllanthus emblica",
+            "description": "Amla, or Indian Gooseberry, is rich in vitamin C and antioxidants, beneficial for immunity, digestion, and skin health.",
+            "habitat": "Grows in tropical and subtropical regions, commonly found in dry, deciduous forests and fertile plains.",
+            "medicinalUses": "Boosts immunity, improves digestion, promotes hair growth, and enhances skin health."
+        },
+        {
+            "id": 2,
+            "name": "Ashwagandha",
+            "scientific_name": "Withania somnifera",
+            "description": "Ashwagandha is an adaptogenic herb that helps reduce stress, improve energy, and boost immunity.",
+            "habitat": "Found in dry regions, sandy soils, and arid zones.",
+            "medicinalUses": "Reduces stress and anxiety, enhances strength and stamina, supports immune function, and improves sleep quality."
+        },
+        {
+            "id": 3,
+            "name": "Bael",
+            "scientific_name": "Aegle marmelos",
+            "description": "Bael is used for treating digestive disorders, particularly constipation and diarrhea.",
+            "habitat": "Flourishes in dry forests, hilly regions, and well-drained soils.",
+            "medicinalUses": "Aids digestion, relieves constipation, helps manage diabetes, and has antibacterial properties."
+        },
+        {
+            "id": 4,
+            "name": "Brahmi",
+            "scientific_name": "Bacopa monnieri",
+            "description": "Brahmi is well-known for its brain-boosting properties, enhancing memory and cognitive functions.",
+            "habitat": "Grows in wet, marshy areas, near riverbanks and humid tropical environments.",
+            "medicinalUses": "Improves memory and concentration, reduces anxiety, and supports brain function."
+        },
+        {
+            "id": 5,
+            "name": "Giloy",
+            "scientific_name": "Tinospora cordifolia",
+            "description": "Giloy is an immunity booster and is used to treat fever, infections, and chronic diseases.",
+            "habitat": "Thrives in tropical and subtropical regions, often found climbing on trees in forests and gardens.",
+            "medicinalUses": "Boosts immunity, treats chronic fever, detoxifies the body, and manages diabetes."
+        },
+        {
+            "id": 6,
+            "name": "Gotu Kola",
+            "scientific_name": "Centella asiatica",
+            "description": "Gotu Kola is a medicinal herb used for improving memory, reducing stress, and healing wounds.",
+            "habitat": "Prefers moist, swampy areas, found in tropical and subtropical climates.",
+            "medicinalUses": "Enhances cognitive function, promotes wound healing, reduces stress, and supports skin health."
+        },
+        {
+            "id": 7,
+            "name": "Mulethi",
+            "scientific_name": "Glycyrrhiza glabra",
+            "description": "Mulethi (Licorice) is known for its soothing effects on the throat, digestion, and respiratory health.",
+            "habitat": "Thrives in sandy and loamy soils, commonly found in riverbanks and semi-arid regions.",
+            "medicinalUses": "Relieves sore throat, aids digestion, soothes respiratory issues, and reduces inflammation."
+        },
+        {
+            "id": 8,
+            "name": "Neem",
+            "scientific_name": "Azadirachta indica",
+            "description": "Neem is a powerful antibacterial and antifungal plant, widely used for skin care and medicinal purposes.",
+            "habitat": "Grows in tropical and subtropical climates, often found in dry, arid, and semi-arid regions.",
+            "medicinalUses": "Purifies blood, treats skin infections, supports oral health, and strengthens immunity."
+        },
+        {
+            "id": 9,
+            "name": "Safed Musli",
+            "scientific_name": "Chlorophytum borivilianum",
+            "description": "Safed Musli is known for its aphrodisiac properties and is used to boost vitality and strength.",
+            "habitat": "Grows in well-drained, loamy soils in subtropical forests and grasslands.",
+            "medicinalUses": "Enhances stamina, boosts energy, improves reproductive health, and strengthens immunity."
+        },
+        {
+            "id": 10,
+            "name": "Tulsi",
+            "scientific_name": "Ocimum sanctum",
+            "description": "Tulsi, also known as Holy Basil, has antimicrobial and anti-inflammatory properties and is widely used in Ayurveda.",
+            "habitat": "Found in warm and humid climates, mainly in plains, gardens, and cultivated fields.",
+            "medicinalUses": "Fights infections, reduces stress, improves respiratory health, and regulates blood sugar levels."
+        },
+        {
+            "id": 11,
+            "name": "Turmeric",
+            "scientific_name": "Curcuma longa",
+            "description": "Turmeric is known for its anti-inflammatory and antioxidant properties, widely used in medicine and cooking.",
+            "habitat": "Prefers warm, humid climates, commonly cultivated in tropical and subtropical regions.",
+            "medicinalUses": "Reduces inflammation, boosts immunity, improves digestion, and supports skin health."
+        }
     ]
-  }
-  
+}

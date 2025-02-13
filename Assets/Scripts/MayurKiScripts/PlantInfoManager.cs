@@ -5,17 +5,17 @@ using System.IO;
 using System;
 
 [System.Serializable]
-public class PlantData // Renamed to avoid conflict
+public class PlantData
 {
     public int id;
     public string name;
     public string description;
-    public string environment;
+    public string habitat;  // Corrected name to match JSON
     public string medicinalUses;
 }
 
 [System.Serializable]
-public class PlantDataCollection // Renamed to avoid conflict
+public class PlantDataCollection
 {
     public List<PlantData> plants;
 }
@@ -25,10 +25,10 @@ public class PlantInfoManager : MonoBehaviour
     public GameObject infoPanel;
     public TextMeshProUGUI infoText;
 
-    private PlantDataCollection plantDataCollection; // Updated variable name
+    private PlantDataCollection plantDataCollection;
     private int activePlantID = -1;
 
-    public int plantID; // Assign a unique ID to each button in the Inspector
+    public int plantID;
 
     private void Start()
     {
@@ -73,7 +73,9 @@ public class PlantInfoManager : MonoBehaviour
             PlantData plant = plantDataCollection.plants.Find(p => p.id == plantID);
             if (plant != null)
             {
-                infoText.text = $"<b>{plant.name}</b>\n\n{plant.description}\n\n<b>Environment:</b> {plant.environment}\n\n<b>Medicinal Uses:</b> {plant.medicinalUses}";
+                infoText.text = $"<b>{plant.name}</b>\n\n<b>Description:</b> {plant.description}\n\n" +
+                                $"<b>Habitat:</b> {plant.habitat}\n\n<b>Medicinal Uses:</b> {plant.medicinalUses}";
+
                 infoPanel.SetActive(true);
                 activePlantID = plantID;
             }
@@ -82,6 +84,10 @@ public class PlantInfoManager : MonoBehaviour
                 infoText.text = "No plant info found.";
                 infoPanel.SetActive(true);
             }
+        }
+        else
+        {
+            Debug.LogError("Info panel or text component is not assigned.");
         }
     }
 }
