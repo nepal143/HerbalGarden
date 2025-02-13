@@ -5102,6 +5102,7 @@ GameObject:
   - component: {fileID: 234658736}
   - component: {fileID: 234658735}
   - component: {fileID: 234658734}
+  - component: {fileID: 234658737}
   m_Layer: 5
   m_Name: Uses
   m_TagString: Untagged
@@ -5172,7 +5173,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 234658735}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 234658737}
+        m_TargetAssemblyTypeName: PlantInfoManager, Assembly-CSharp
+        m_MethodName: ShowPlantInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &234658735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5211,6 +5224,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234658732}
   m_CullTransparentMesh: 1
+--- !u!114 &234658737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234658732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d6e4b3040178245aa15609074db606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoPanel: {fileID: 2039356304}
+  infoText: {fileID: 1480381045}
+  plantID: 10
 --- !u!4 &236613149 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be5d88e5967472842a672d8a25952d3a, type: 3}
@@ -8501,6 +8529,7 @@ GameObject:
   - component: {fileID: 382164379}
   - component: {fileID: 382164378}
   - component: {fileID: 382164377}
+  - component: {fileID: 382164380}
   m_Layer: 5
   m_Name: Uses
   m_TagString: Untagged
@@ -8571,7 +8600,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 382164378}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 382164380}
+        m_TargetAssemblyTypeName: PlantInfoManager, Assembly-CSharp
+        m_MethodName: ShowPlantInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &382164378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8610,6 +8651,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382164375}
   m_CullTransparentMesh: 1
+--- !u!114 &382164380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382164375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d6e4b3040178245aa15609074db606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoPanel: {fileID: 2039356304}
+  infoText: {fileID: 1480381045}
+  plantID: 11
 --- !u!1 &384794858
 GameObject:
   m_ObjectHideFlags: 0
@@ -9082,6 +9138,7 @@ GameObject:
   - component: {fileID: 390222811}
   - component: {fileID: 390222810}
   - component: {fileID: 390222809}
+  - component: {fileID: 390222812}
   m_Layer: 5
   m_Name: Uses
   m_TagString: Untagged
@@ -9152,7 +9209,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 390222810}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 582795980}
+        m_TargetAssemblyTypeName: PlantInfoManager, Assembly-CSharp
+        m_MethodName: ShowPlantInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &390222810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9191,6 +9260,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390222807}
   m_CullTransparentMesh: 1
+--- !u!114 &390222812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390222807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d6e4b3040178245aa15609074db606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoPanel: {fileID: 2039356304}
+  infoText: {fileID: 1480381045}
+  plantID: 7
 --- !u!4 &394600197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be5d88e5967472842a672d8a25952d3a, type: 3}
@@ -13385,6 +13469,7 @@ GameObject:
   - component: {fileID: 579667926}
   - component: {fileID: 579667925}
   - component: {fileID: 579667924}
+  - component: {fileID: 579667927}
   m_Layer: 5
   m_Name: Uses
   m_TagString: Untagged
@@ -13455,7 +13540,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 579667925}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 579667927}
+        m_TargetAssemblyTypeName: PlantInfoManager, Assembly-CSharp
+        m_MethodName: ShowPlantInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &579667925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13494,6 +13591,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579667922}
   m_CullTransparentMesh: 1
+--- !u!114 &579667927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579667922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d6e4b3040178245aa15609074db606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoPanel: {fileID: 2039356304}
+  infoText: {fileID: 1480381045}
+  plantID: 9
 --- !u!1 &580393651
 GameObject:
   m_ObjectHideFlags: 0
@@ -13720,6 +13832,7 @@ GameObject:
   - component: {fileID: 582795979}
   - component: {fileID: 582795978}
   - component: {fileID: 582795977}
+  - component: {fileID: 582795980}
   m_Layer: 5
   m_Name: Uses
   m_TagString: Untagged
@@ -13790,7 +13903,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 582795978}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 582795980}
+        m_TargetAssemblyTypeName: PlantInfoManager, Assembly-CSharp
+        m_MethodName: ShowPlantInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &582795978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13829,6 +13954,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582795975}
   m_CullTransparentMesh: 1
+--- !u!114 &582795980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582795975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d6e4b3040178245aa15609074db606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoPanel: {fileID: 2039356304}
+  infoText: {fileID: 1480381045}
+  plantID: 8
 --- !u!1 &584126685
 GameObject:
   m_ObjectHideFlags: 0
@@ -15729,6 +15869,7 @@ GameObject:
   - component: {fileID: 659218639}
   - component: {fileID: 659218638}
   - component: {fileID: 659218637}
+  - component: {fileID: 659218640}
   m_Layer: 5
   m_Name: Uses
   m_TagString: Untagged
@@ -15799,7 +15940,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 659218638}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 659218640}
+        m_TargetAssemblyTypeName: PlantInfoManager, Assembly-CSharp
+        m_MethodName: ShowPlantInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &659218638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15838,6 +15991,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659218635}
   m_CullTransparentMesh: 1
+--- !u!114 &659218640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659218635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d6e4b3040178245aa15609074db606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoPanel: {fileID: 2039356304}
+  infoText: {fileID: 1480381045}
+  plantID: 6
 --- !u!1001 &662094237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16281,6 +16449,7 @@ GameObject:
   - component: {fileID: 680203535}
   - component: {fileID: 680203534}
   - component: {fileID: 680203533}
+  - component: {fileID: 680203536}
   m_Layer: 5
   m_Name: Uses
   m_TagString: Untagged
@@ -16351,7 +16520,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 680203534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 680203536}
+        m_TargetAssemblyTypeName: PlantInfoManager, Assembly-CSharp
+        m_MethodName: ShowPlantInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &680203534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16390,6 +16571,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680203531}
   m_CullTransparentMesh: 1
+--- !u!114 &680203536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680203531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d6e4b3040178245aa15609074db606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoPanel: {fileID: 2039356304}
+  infoText: {fileID: 1480381045}
+  plantID: 2
 --- !u!1 &680385879
 GameObject:
   m_ObjectHideFlags: 0
@@ -20613,6 +20809,7 @@ GameObject:
   - component: {fileID: 873714911}
   - component: {fileID: 873714910}
   - component: {fileID: 873714909}
+  - component: {fileID: 873714912}
   m_Layer: 5
   m_Name: Uses
   m_TagString: Untagged
@@ -20683,7 +20880,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 873714910}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 873714912}
+        m_TargetAssemblyTypeName: PlantInfoManager, Assembly-CSharp
+        m_MethodName: ShowPlantInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &873714910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20722,6 +20931,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873714907}
   m_CullTransparentMesh: 1
+--- !u!114 &873714912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873714907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d6e4b3040178245aa15609074db606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoPanel: {fileID: 2039356304}
+  infoText: {fileID: 1480381045}
+  plantID: 5
 --- !u!1 &879579539
 GameObject:
   m_ObjectHideFlags: 0
@@ -34832,8 +35056,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 6
-  m_fontSizeBase: 6
+  m_fontSize: 3.5
+  m_fontSizeBase: 3.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -34930,6 +35154,7 @@ GameObject:
   - component: {fileID: 1483256123}
   - component: {fileID: 1483256122}
   - component: {fileID: 1483256121}
+  - component: {fileID: 1483256124}
   m_Layer: 5
   m_Name: Uses
   m_TagString: Untagged
@@ -35000,7 +35225,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1483256122}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1483256124}
+        m_TargetAssemblyTypeName: PlantInfoManager, Assembly-CSharp
+        m_MethodName: ShowPlantInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1483256122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35039,6 +35276,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483256119}
   m_CullTransparentMesh: 1
+--- !u!114 &1483256124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483256119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d6e4b3040178245aa15609074db606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoPanel: {fileID: 2039356304}
+  infoText: {fileID: 1480381045}
+  plantID: 4
 --- !u!1 &1486327578
 GameObject:
   m_ObjectHideFlags: 0
@@ -35409,7 +35661,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1502048048}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1502048050}
+        m_TargetAssemblyTypeName: PlantInfoManager, Assembly-CSharp
+        m_MethodName: ShowPlantInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1502048048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48307,6 +48571,7 @@ GameObject:
   - component: {fileID: 2084065509}
   - component: {fileID: 2084065508}
   - component: {fileID: 2084065507}
+  - component: {fileID: 2084065510}
   m_Layer: 5
   m_Name: Uses
   m_TagString: Untagged
@@ -48377,7 +48642,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2084065508}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2084065510}
+        m_TargetAssemblyTypeName: PlantInfoManager, Assembly-CSharp
+        m_MethodName: ShowPlantInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2084065508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48416,6 +48693,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084065505}
   m_CullTransparentMesh: 1
+--- !u!114 &2084065510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084065505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d6e4b3040178245aa15609074db606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoPanel: {fileID: 2039356304}
+  infoText: {fileID: 1480381045}
+  plantID: 3
 --- !u!1 &2084883985 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4922582553321831162, guid: 76f3439a0ae796e4b81bee3f91f888ee, type: 3}
