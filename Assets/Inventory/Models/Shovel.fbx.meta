@@ -3,27 +3,7 @@ guid: 127484843f4049d45a64249f27d9141c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: MiniShovel_Base_color_1001
-    second: {fileID: 2800000, guid: 80c8c5ed2cefdcd428da4883319b8271, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: MiniShovel_Metallic_1001
-    second: {fileID: 2800000, guid: 2e52fe3853eb2e74b9d768af7557048a, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: MiniShovel_Normal_OpenGL_1001
-    second: {fileID: 2800000, guid: c52f233d8c1f77a498963bba284254ef, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: MiniShovel_Roughness_1001
-    second: {fileID: 2800000, guid: 7439087f9cb493049a860dab303766d3, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
