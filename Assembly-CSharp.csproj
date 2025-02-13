@@ -121,6 +121,7 @@
     <Compile Include="Assets\Scripts\MayurKiScripts\PlantStorage.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scenes\LowPolyTree_Oak\RCK 2.3\RCK 2.3\Skidmarks\WheelSkidmarks.cs" />
+    <Compile Include="Assets\Scripts\MayurKiScripts\PlantInfoManager.cs" />
     <Compile Include="Assets\Scripts\MayurKiScripts\TogglePanels.cs" />
     <Compile Include="Assets\Scripts\NepalKiScripts\UIScripts\EnableUIOnHandRotation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
