@@ -133,17 +133,22 @@
     <Compile Include="Assets\Scripts\MayurKiScripts\SnapTracker.cs" />
     <Compile Include="Assets\Scripts\AshutoshKiScripts\MinimapActivator.cs" />
     <Compile Include="Assets\Scripts\NepalKiScripts\UIScripts\VRInventoryManager.cs" />
+    <Compile Include="Assets\Scripts\AshutoshKiScripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\AshutoshKiScripts\MinimapCameraFollow.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Assets (Ash)\TerrainSampleAssets\ThirdPartyNotices.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Ash\BushGrassBend\Demo\Example3\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\Ash\BushGrassBend\Demo\DOCUMENTATION.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Ash\BushGrassBend\Demo\Example1\README.txt" />
     <None Include="Assets\Ash\UI\UI\FONT\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -156,6 +161,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Ash\UI\UI\FONT\OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Ash\BushGrassBend\Demo\Example2\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Scenes\LowPolyTree_Oak\RCK 2.3\RCK 2.3\Skidmarks\Skidmarks Essentials\Skidmarks.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
