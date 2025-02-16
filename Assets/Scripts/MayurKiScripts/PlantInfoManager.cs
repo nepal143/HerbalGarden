@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +11,7 @@ public class PlantData
     public int id;
     public string name;
     public string description;
-    public string habitat;  // Corrected name to match JSON
+    public string habitat;  
     public string medicinalUses;
 }
 
@@ -24,11 +25,13 @@ public class PlantInfoManager : MonoBehaviour
 {
     public GameObject infoPanel;
     public TextMeshProUGUI infoText;
+    public RawImage plantRawImage; // Raw Image component reference
 
     private PlantDataCollection plantDataCollection;
     private int activePlantID = -1;
 
     public int plantID;
+    public Texture2D plantTexture; // Assign the plant texture manually in the editor
 
     private void Start()
     {
@@ -78,6 +81,13 @@ public class PlantInfoManager : MonoBehaviour
 
                 infoPanel.SetActive(true);
                 activePlantID = plantID;
+
+                // Set the assigned texture
+                if (plantRawImage != null && plantTexture != null)
+                {
+                    plantRawImage.texture = plantTexture; // Set the texture assigned in the editor
+                    plantRawImage.gameObject.SetActive(true);
+                }
             }
             else
             {
@@ -87,7 +97,7 @@ public class PlantInfoManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Info panel or text component is not assigned.");
+            Debug.LogError("Info panel, Raw Image, or text component is not assigned.");
         }
     }
 }
