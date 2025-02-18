@@ -7828,6 +7828,8 @@ MonoBehaviour:
   mailText: {fileID: 768985816}
   closeButton: {fileID: 59090959}
   buttonImage: {fileID: 358105602}
+  mailDisplayImage: {fileID: 1088733111}
+  assignedSprite: {fileID: 21300000, guid: ba60ec58de446344aa72473d97b20e3f, type: 3}
   mailID: 1
 --- !u!1 &359598251
 GameObject:
@@ -16544,6 +16546,8 @@ MonoBehaviour:
   mailText: {fileID: 768985816}
   closeButton: {fileID: 59090959}
   buttonImage: {fileID: 669528984}
+  mailDisplayImage: {fileID: 1088733111}
+  assignedSprite: {fileID: 21300000, guid: 7138e32f42effae45864dfb65543c47c, type: 3}
   mailID: 6
 --- !u!114 &669528983
 MonoBehaviour:
@@ -19078,6 +19082,8 @@ MonoBehaviour:
   mailText: {fileID: 768985816}
   closeButton: {fileID: 59090959}
   buttonImage: {fileID: 766708403}
+  mailDisplayImage: {fileID: 1088733111}
+  assignedSprite: {fileID: 21300000, guid: 3111e88526a225143a4d04e7e9199ec1, type: 3}
   mailID: 7
 --- !u!114 &766708402
 MonoBehaviour:
@@ -24241,6 +24247,8 @@ MonoBehaviour:
   mailText: {fileID: 768985816}
   closeButton: {fileID: 59090959}
   buttonImage: {fileID: 986803747}
+  mailDisplayImage: {fileID: 1088733111}
+  assignedSprite: {fileID: 21300000, guid: 0156cc359a00568409a7bf617b056ff6, type: 3}
   mailID: 9
 --- !u!114 &986803746
 MonoBehaviour:
@@ -24910,6 +24918,8 @@ MonoBehaviour:
   mailText: {fileID: 768985816}
   closeButton: {fileID: 59090959}
   buttonImage: {fileID: 1016991361}
+  mailDisplayImage: {fileID: 1088733111}
+  assignedSprite: {fileID: 21300000, guid: 5555f43fdf94f04478abe2a89ad1230f, type: 3}
   mailID: 2
 --- !u!4 &1025690440 stripped
 Transform:
@@ -26079,6 +26089,78 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087634175}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1088733110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1088733113}
+  - component: {fileID: 1088733112}
+  - component: {fileID: 1088733111}
+  m_Layer: 5
+  m_Name: PatientDisplayImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1088733111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088733110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1088733112
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088733110}
+  m_CullTransparentMesh: 1
+--- !u!224 &1088733113
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088733110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1219153242}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 77.29, y: 0}
+  m_SizeDelta: {x: 54.57, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1091813729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be5d88e5967472842a672d8a25952d3a, type: 3}
@@ -27731,6 +27813,8 @@ MonoBehaviour:
   mailText: {fileID: 768985816}
   closeButton: {fileID: 59090959}
   buttonImage: {fileID: 1141886718}
+  mailDisplayImage: {fileID: 1088733111}
+  assignedSprite: {fileID: 21300000, guid: eb77db93988f4454f8308f976ecc5f12, type: 3}
   mailID: 5
 --- !u!1 &1150270467
 GameObject:
@@ -29289,6 +29373,7 @@ RectTransform:
   - {fileID: 1076507498}
   - {fileID: 1155183776}
   - {fileID: 59090958}
+  - {fileID: 1088733113}
   m_Father: {fileID: 1875728971}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -38959,6 +39044,8 @@ MonoBehaviour:
   mailText: {fileID: 768985816}
   closeButton: {fileID: 59090959}
   buttonImage: {fileID: 1625569585}
+  mailDisplayImage: {fileID: 1088733111}
+  assignedSprite: {fileID: 21300000, guid: 0ed51eec4b1790947b1de5d45bfd3afa, type: 3}
   mailID: 3
 --- !u!1 &1627195637
 GameObject:
@@ -43164,6 +43251,8 @@ MonoBehaviour:
   mailText: {fileID: 768985816}
   closeButton: {fileID: 59090959}
   buttonImage: {fileID: 1814890411}
+  mailDisplayImage: {fileID: 1088733111}
+  assignedSprite: {fileID: 21300000, guid: f756293aae5a9974296394cf71711361, type: 3}
   mailID: 8
 --- !u!114 &1814890410
 MonoBehaviour:
@@ -45163,7 +45252,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1875728970
 Canvas:
   m_ObjectHideFlags: 0
@@ -50183,6 +50272,8 @@ MonoBehaviour:
   mailText: {fileID: 768985816}
   closeButton: {fileID: 59090959}
   buttonImage: {fileID: 2110349431}
+  mailDisplayImage: {fileID: 1088733111}
+  assignedSprite: {fileID: 21300000, guid: da9358794a3292940bbcf35245e3d54e, type: 3}
   mailID: 4
 --- !u!1 &2112454737
 GameObject:
