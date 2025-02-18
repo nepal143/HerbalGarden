@@ -25,18 +25,21 @@ public class MailButton : MonoBehaviour
     public TextMeshProUGUI mailText;
     public Button closeButton;
     public Image buttonImage;
+    public RawImage mailDisplayImage; // General RawImage to display mail sprite
+    public Sprite assignedSprite; // Unique sprite assigned to each button
 
     private bool isRead = false;
     private MailList mailData;
-
-    public int mailID; // Assign a unique ID to each button in the Inspector
+    public int mailID;
 
     private void Start()
     {
         LoadMailData();
-
         if (mailPanel != null)
             mailPanel.SetActive(false);
+        
+        if (mailDisplayImage != null)
+            mailDisplayImage.gameObject.SetActive(false); // Initially disable image
 
         if (closeButton != null)
             closeButton.onClick.AddListener(CloseMail);
@@ -45,7 +48,6 @@ public class MailButton : MonoBehaviour
     void LoadMailData()
     {
         string filePath = Path.Combine(Application.streamingAssetsPath, "mails.json");
-
         if (File.Exists(filePath))
         {
             try
@@ -86,12 +88,22 @@ public class MailButton : MonoBehaviour
             SetButtonTransparency(0.5f);
             isRead = true;
         }
+
+        // Display the assigned sprite on the RawImage
+        if (mailDisplayImage != null && assignedSprite != null)
+        {
+            mailDisplayImage.texture = assignedSprite.texture;
+            mailDisplayImage.gameObject.SetActive(true); // Enable image
+        }
     }
 
     private void CloseMail()
     {
         if (mailPanel != null)
             mailPanel.SetActive(false);
+
+        if (mailDisplayImage != null)
+            mailDisplayImage.gameObject.SetActive(false); // Hide image on close
     }
 
     private void SetButtonTransparency(float alpha)
@@ -104,7 +116,6 @@ public class MailButton : MonoBehaviour
         }
     }
 
-    // ✅ **New Function** to highlight matched mail in green
     public void HighlightMail()
     {
         if (buttonImage != null)
