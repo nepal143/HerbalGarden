@@ -46,7 +46,7 @@ public class MedicineManager : MonoBehaviour
     }
 
     // Called when button is pressed to release the medicine
-    public void ReleaseMedicine()
+   public void ReleaseMedicine()
 {
     if (detectedMedicine != null)
     {
@@ -61,30 +61,31 @@ public class MedicineManager : MonoBehaviour
         }
     }
 
-    // ✅ Enable GameObject (if assigned)
+    // ✅ Enable GameObject
     if (gameObjectToEnableOnRelease != null)
     {
         gameObjectToEnableOnRelease.SetActive(true);
-        Debug.Log("✅ Enabled GameObject: " + gameObjectToEnableOnRelease.name);
+    }
 
-        Collider objCollider = gameObjectToEnableOnRelease.GetComponent<Collider>();
-        if (objCollider != null)
+    // ✅ Enable Canvas & Check Mail (whether enabled or not)
+    if (canvasToEnable != null)
+    {
+        bool wasCanvasDisabled = !canvasToEnable.isActiveAndEnabled;
+        canvasToEnable.gameObject.SetActive(true);
+
+        // 🔄 If the canvas was disabled, start coroutine
+        if (wasCanvasDisabled)
         {
-            objCollider.enabled = true;
-            Debug.Log("✅ Enabled Collider for: " + gameObjectToEnableOnRelease.name);
+            StartCoroutine(DelayedMailCheck(detectedMedicine.tag, 0.25f));
+        }
+        else
+        {
+            // ✅ Directly check mail if canvas was already active
+            CheckMailForMedicine(detectedMedicine.tag);
         }
     }
-
-    // ✅ Enable Canvas and start delayed mail check
-    if (canvasToEnable != null && !canvasToEnable.isActiveAndEnabled)
-    {
-        canvasToEnable.gameObject.SetActive(true);
-        Debug.Log("✅ Enabled Canvas: " + canvasToEnable.name);
-
-        // 🔄 Start coroutine to check mail after 0.25 seconds
-        StartCoroutine(DelayedMailCheck(detectedMedicine.tag, 0.25f));
-    }
 }
+
 
 // ✅ Coroutine for delaying mail check
 private IEnumerator DelayedMailCheck(string medicineTag, float delay)
@@ -105,50 +106,57 @@ private IEnumerator DelayedMailCheck(string medicineTag, float delay)
         }
     }
 
-    private void CheckMailForMedicine(string medicineTag)
+ private void CheckMailForMedicine(string medicineTag)
+{
+    Debug.Log("🔎 Checking mail for medicine: " + medicineTag);
+
+    if (!File.Exists(jsonPath))
     {
-        if (!File.Exists(jsonPath))
-        {
-            Debug.LogError("❌ mails.json not found at: " + jsonPath);
-            return;
-        }
+        Debug.LogError("❌ mails.json not found at: " + jsonPath);
+        return;
+    }
 
-        string jsonData = File.ReadAllText(jsonPath);
-        MailData mailData = JsonUtility.FromJson<MailData>(jsonData);
+    string jsonData = File.ReadAllText(jsonPath);
+    MailData mailData = JsonUtility.FromJson<MailData>(jsonData);
 
-        if (mailData == null || mailData.mails == null)
-        {
-            Debug.LogError("❌ Error loading mail data! File might be empty or incorrectly formatted.");
-            return;
-        }
+    if (mailData == null || mailData.mails == null)
+    {
+        Debug.LogError("❌ Error loading mail data! File might be empty or incorrectly formatted.");
+        return;
+    }
 
-        bool found = false;
-        foreach (var mail in mailData.mails)
+    bool found = false;
+    foreach (var mail in mailData.mails)
+    {
+        if (mail.medicine.name == medicineTag)
         {
-            if (mail.medicine.name == medicineTag)
+            Debug.Log("✅ Medicine Match Found! Mail ID: " + mail.id + " | Medicine: " + medicineTag);
+            found = true;
+
+            // Find and highlight the mail in UI
+            MailButton[] mailButtons = FindObjectsOfType<MailButton>();
+            foreach (MailButton mailButton in mailButtons)
             {
-                Debug.Log("✅ Medicine Match Found! Mail ID: " + mail.id + " | Medicine: " + medicineTag);
-                found = true;
-
-                // Find and highlight the mail in UI
-                MailButton[] mailButtons = FindObjectsOfType<MailButton>();
-                foreach (MailButton mailButton in mailButtons)
+                if (mailButton.mailID == mail.id)
                 {
-                    if (mailButton.mailID == mail.id)
-                    {
-                        mailButton.HighlightMail();
-                        break;
-                    }
-                }
-                break; // Stop checking after finding the first match
-            }
-        }
+                    Debug.Log("🎨 Highlighting mail ID: " + mail.id);
+                    mailButton.HighlightMail();
 
-        if (!found)
-        {
-            Debug.Log("⚠️ No matching mail found for medicine: " + medicineTag);
+                    // ✅ Force UI update to make sure the color applies
+                    Canvas.ForceUpdateCanvases();
+                    break;
+                }
+            }
+            break; // Stop checking after finding the first match
         }
     }
+
+    if (!found)
+    {
+        Debug.Log("⚠️ No matching mail found for medicine: " + medicineTag);
+    }
+}
+
 
     // Called when another button is pressed to delete the medicine & reset scene elements
     public void DeleteMedicine()
