@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using System.Collections;
 using System.IO;
 using System;
 
@@ -25,24 +26,31 @@ public class MailButton : MonoBehaviour
     public TextMeshProUGUI mailText;
     public Button closeButton;
     public Image buttonImage;
-    public RawImage mailDisplayImage; // General RawImage to display mail sprite
+    public RawImage mailDisplayImage; // Common RawImage for mail images
     public Sprite assignedSprite; // Unique sprite assigned to each button
+    public Sprite highlightSprite; // New sprite when button turns green
 
     private bool isRead = false;
     private MailList mailData;
     public int mailID;
+    private static MailButton lastOpenedMail; // Tracks the last opened mail button
+
+    private Color targetColor = new Color(0f, 165f / 255f, 3f / 255f); // #00A503
+    private bool isColorChanged = false;
 
     private void Start()
     {
         LoadMailData();
         if (mailPanel != null)
             mailPanel.SetActive(false);
-        
+
         if (mailDisplayImage != null)
             mailDisplayImage.gameObject.SetActive(false); // Initially disable image
 
         if (closeButton != null)
             closeButton.onClick.AddListener(CloseMail);
+
+        StartCoroutine(TrackButtonColor());
     }
 
     void LoadMailData()
@@ -68,6 +76,13 @@ public class MailButton : MonoBehaviour
 
     public void OpenMail()
     {
+        if (lastOpenedMail != null && lastOpenedMail != this)
+        {
+            lastOpenedMail.HideMailImage();
+        }
+
+        lastOpenedMail = this; // Update the last opened mail
+
         if (mailPanel != null && mailText != null && mailData != null)
         {
             MailEntry mail = mailData.mails.Find(m => m.id == mailID);
@@ -101,9 +116,14 @@ public class MailButton : MonoBehaviour
     {
         if (mailPanel != null)
             mailPanel.SetActive(false);
+    }
 
+    private void HideMailImage()
+    {
         if (mailDisplayImage != null)
-            mailDisplayImage.gameObject.SetActive(false); // Hide image on close
+        {
+            mailDisplayImage.gameObject.SetActive(false); // Hide the previous mail's image
+        }
     }
 
     private void SetButtonTransparency(float alpha)
@@ -120,8 +140,47 @@ public class MailButton : MonoBehaviour
     {
         if (buttonImage != null)
         {
-            buttonImage.color = new Color(0f, 0.647f, 0.02f); // RGB for #00A503
+            buttonImage.color = targetColor; // Change button color to green
             Debug.Log("✅ Mail ID " + mailID + " highlighted as matched.");
         }
+    }
+
+    private IEnumerator TrackButtonColor()
+    {
+        while (true)
+        {
+            if (buttonImage != null)
+            {
+                // Check if the color is **close** to green
+                if (!isColorChanged && ColorsAreSimilar(buttonImage.color, targetColor, 0.01f))
+                {
+                    Debug.Log("🎨 Button turned green! Updating sprite...");
+
+                    // Change sprite instantly
+                    if (highlightSprite != null)
+                    {
+                        assignedSprite = highlightSprite;
+
+                        // Update the displayed sprite in UI
+                        if (mailDisplayImage != null)
+                        {
+                            mailDisplayImage.texture = highlightSprite.texture;
+                            mailDisplayImage.gameObject.SetActive(true);
+                        }
+                    }
+
+                    isColorChanged = true; // Prevent unnecessary updates
+                }
+            }
+            yield return null; // ✅ Check **every frame** for instant response
+        }
+    }
+
+    // Helper function to compare colors with a small tolerance
+    private bool ColorsAreSimilar(Color c1, Color c2, float tolerance)
+    {
+        return Mathf.Abs(c1.r - c2.r) < tolerance &&
+               Mathf.Abs(c1.g - c2.g) < tolerance &&
+               Mathf.Abs(c1.b - c2.b) < tolerance;
     }
 }
