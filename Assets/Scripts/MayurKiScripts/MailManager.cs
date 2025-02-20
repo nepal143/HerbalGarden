@@ -44,4 +44,19 @@ public class MailManager : MonoBehaviour
             Debug.LogError("❌ No Image component found on " + mailObj.name);
         }
     }
+
+    private void ChangeMailColorInstant(GameObject mailObj)
+{
+    Image mailImage = mailObj.GetComponent<Image>(); 
+    if (mailImage != null)
+    {
+        mailImage.color = new Color(0f, 0.647f, 0.02f); // RGB for #00A503
+        Debug.Log("🎨 Color changed instantly for: " + mailObj.name);
+    }
+    else
+    {
+        Debug.LogError("❌ No Image component found on " + mailObj.name);
+    }
+}
+
 }
