@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7567535036157573988}
   - component: {fileID: 1333002111335833097}
   m_Layer: 0
-  m_Name: Shovel
+  m_Name: Pokedex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c9109a69298a1144cb2d04ba46da4778, type: 3}
+  m_Texture: {fileID: 2800000, guid: 3c09b35c10a52eb4498c75e9f622b3b6, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91fafe7c6c9adef458f2f72f6a390a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemIndex: 1
+  itemName: Pokedex
   inventoryManager: {fileID: 0}
 --- !u!114 &7567535036157573988
 MonoBehaviour:
