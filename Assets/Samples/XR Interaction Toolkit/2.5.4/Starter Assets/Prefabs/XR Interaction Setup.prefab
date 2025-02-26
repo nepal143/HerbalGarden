@@ -461,7 +461,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handControllerParent: {fileID: 9014170783705847996}
   inventoryItems:
-  - itemName: Shovel
+  - index: 0
+    itemName: Pokedex
+    itemPrefab: {fileID: 4579991614567344274, guid: e358f2618c5163b41818b76c2ad1e3db, type: 3}
+    itemImagePrefab: {fileID: 5115284686688811467, guid: c99d0798138d1c346909ed2af54c13c1, type: 3}
+  - index: 1
+    itemName: Shovel
     itemPrefab: {fileID: 3023589532822195732, guid: b2f3a5946f5f5de439047a3a56c1a456, type: 3}
     itemImagePrefab: {fileID: 5115284686688811467, guid: 624d02d49743de14686fe0d83b856930, type: 3}
   inventoryPanel: {fileID: 8005909162706571925}
@@ -2413,8 +2418,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handControllerParent: {fileID: 0}
   inventoryItems:
-  - itemName: Shovel
+  - index: 0
+    itemName: Shovel
     itemPrefab: {fileID: 3023589532822195732, guid: b2f3a5946f5f5de439047a3a56c1a456, type: 3}
+    itemImagePrefab: {fileID: 5115284686688811467, guid: c99d0798138d1c346909ed2af54c13c1, type: 3}
+  - index: 0
+    itemName: Pokedex
+    itemPrefab: {fileID: 4579991614567344274, guid: e358f2618c5163b41818b76c2ad1e3db, type: 3}
     itemImagePrefab: {fileID: 5115284686688811467, guid: 624d02d49743de14686fe0d83b856930, type: 3}
   inventoryPanel: {fileID: 8005909162706571925}
   itemSpawnPoint: {fileID: 9014170783705847996}
@@ -3184,26 +3194,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4134505312059479865}
     m_Modifications:
-    - target: {fileID: 1319746311, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-      propertyPath: m_Parameters.widthMultiplier
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 941652828260492489, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-      propertyPath: m_Parameters.widthMultiplier
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055882120057747522, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-      propertyPath: m_Parameters.widthMultiplier
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-      propertyPath: m_Name
-      value: XR Origin (XR Rig)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2449787133337329438, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-      propertyPath: m_Parameters.widthMultiplier
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 1438552235638684958, guid: a1df9042ebaf3654c89d510f38cff621, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3243,6 +3233,26 @@ PrefabInstance:
     - target: {fileID: 1438552235638684958, guid: a1df9042ebaf3654c89d510f38cff621, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319746311, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 941652828260492489, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055882120057747522, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_Name
+      value: XR Origin (XR Rig)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449787133337329438, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
