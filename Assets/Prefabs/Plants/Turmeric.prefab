@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turmeric
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ab4cb994787bdb5498991406c217dd1e, type: 3}
+      propertyPath: m_TagString
+      value: Turmeric
+      objectReference: {fileID: 0}
     - target: {fileID: 2716701773761515868, guid: ab4cb994787bdb5498991406c217dd1e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
