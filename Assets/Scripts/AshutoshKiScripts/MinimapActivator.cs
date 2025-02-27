@@ -39,4 +39,5 @@ public class MinimapActivator : MonoBehaviour
         // Smoothly adjust alpha
         minimapCanvasGroup.alpha = Mathf.Lerp(minimapCanvasGroup.alpha, targetAlpha, Time.deltaTime * fadeSpeed);
     }
+    
 }
