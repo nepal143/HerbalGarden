@@ -25751,9 +25751,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantPrefabs:
-  - {fileID: 1001058813105154992, guid: f3a82b568be746b45b58a59f50cf839d, type: 3}
-  - {fileID: 808835639388210050, guid: aa55744cee3232e499b74949bfd19625, type: 3}
-  - {fileID: 2413117977030411023, guid: cde124e5b1023ac49b931b05fba6459a, type: 3}
+  - {fileID: 5934577685966471642, guid: 4ccea329ac0a2d24fb87891fc444ae6e, type: 3}
+  - {fileID: 1152478045279716219, guid: d13839372c2c7064a8ab7917fb11d804, type: 3}
+  - {fileID: 1445651538704833011, guid: 3c09ca2c1a3295043966555ec34f3a48, type: 3}
+  - {fileID: 5191464448175323034, guid: d70f69ad6191597418dd3611274f370b, type: 3}
+  - {fileID: 237789438072472223, guid: 97190b7b71c9b3d4dac9bd4c32bf0400, type: 3}
+  - {fileID: 6895383191366894228, guid: b1a795372ec6fdf48916daa2d95d1a26, type: 3}
+  - {fileID: 1486417369775482406, guid: 6aaa8cd7e9d50da47aebb9a80f1c2558, type: 3}
+  - {fileID: 6675995102432972907, guid: 06025aa53a5ef29449d707411f1c0844, type: 3}
+  - {fileID: 6933234834839414847, guid: e24fb3cbf37c20945b4a792d4ce08308, type: 3}
+  - {fileID: 4708155845903416020, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
+  - {fileID: 158469886567909191, guid: a89c830390b805e43a0cff6b1d332be8, type: 3}
   spawnPoints:
   - {fileID: 403539586}
   - {fileID: 2023940241}
