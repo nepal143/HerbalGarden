@@ -92,42 +92,48 @@ public class PlantStorage : MonoBehaviour
     }
 
     public void CheckForMedicine()
+{
+    if (medicineData == null)
     {
-        if (medicineData == null)
+        Debug.LogError("❌ Medicine data not loaded.");
+        return;
+    }
+
+    List<string> collectedPlants = storedPlants
+        .Select(p => p.name.Replace("(Clone)", "").Trim())
+        .ToList();
+
+    bool foundMedicine = false;
+    string matchedMedicine = "";
+
+    foreach (MedicineData medicine in medicineData.medicines)
+    {
+        if (medicine.ingredients.All(ingredient => collectedPlants.Contains(ingredient)))
         {
-            Debug.LogError("Medicine data not loaded.");
-            return;
-        }
-
-        List<string> collectedPlants = storedPlants.Select(p => p.name.Replace("(Clone)", "").Trim()).ToList();
-
-        bool foundMedicine = false;
-        string matchedMedicine = "";
-
-        foreach (MedicineData medicine in medicineData.medicines)
-        {
-            if (medicine.ingredients.All(ingredient => collectedPlants.Contains(ingredient)))
-            {
-                Debug.Log("✅ Matching Medicine Found: " + medicine.medicine);
-                foundMedicine = true;
-                matchedMedicine = medicine.medicine;
-                SpawnMedicine();
-                break;
-            }
-        }
-
-        Color32 newColor = foundMedicine ? new Color32(0x00, 0xFF, 0x1E, 0xFF) : new Color32(0xFF, 0x0F, 0x00, 0xFF);
-
-        foreach (Image panel in panelSlots)
-        {
-            panel.color = newColor;
-        }
-
-        if (foundMedicine)
-        {
-            Debug.Log("📢 Medicine Matched: " + matchedMedicine);
+            Debug.Log("✅ Matching Medicine Found: " + medicine.medicine);
+            foundMedicine = true;
+            matchedMedicine = medicine.medicine;
+            SpawnMedicine();
+            break;
         }
     }
+
+    Color32 newColor = foundMedicine ? new Color32(0x00, 0xFF, 0x1E, 0xFF) : new Color32(0xFF, 0x0F, 0x00, 0xFF);
+
+    foreach (Image panel in panelSlots)
+    {
+        panel.color = newColor;
+    }
+
+    if (foundMedicine)
+    {
+        Debug.Log("📢 Medicine Matched: " + matchedMedicine);
+    }
+
+    // ✅ Call ResetGame after medicine checking
+    ResetGame();
+}
+
 
     private void SpawnMedicine()
 {
