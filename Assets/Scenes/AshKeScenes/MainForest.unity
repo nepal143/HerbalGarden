@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6b461e1f4218a5d4fb8adb3b7604f03a, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.13744515, g: 0.17363201, b: 0.20926571, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20711,7 +20711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.162, y: 0.05799973}
+  m_AnchoredPosition: {x: 0.131, y: 0.05799973}
   m_SizeDelta: {x: 1149, y: 518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1420540223
@@ -20931,6 +20931,67 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7349603237585004480, guid: eed9f6d63208e98409d1eebbe63717cc, type: 3}
+--- !u!1001 &1435121586
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4708155845903416020, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
+      propertyPath: m_Name
+      value: Tulsi Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708155845903416020, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340541696313663598, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 61.094948
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340541696313663598, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.986
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340541696313663598, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.777358
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340541696313663598, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340541696313663598, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340541696313663598, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340541696313663598, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340541696313663598, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340541696313663598, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340541696313663598, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 02d5dae18364f9c49b62da1d4e247193, type: 3}
 --- !u!1 &1444185583
 GameObject:
   m_ObjectHideFlags: 0
@@ -21838,7 +21899,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911068990}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -29383,7 +29444,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007426840}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

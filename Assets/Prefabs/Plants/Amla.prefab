@@ -84,6 +84,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f5bf16f97b797e4e8a252e2ea3e6024, type: 3}
       insertIndex: -1
       addedObject: {fileID: -5701515383978616020}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f5bf16f97b797e4e8a252e2ea3e6024, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1987842598054130459}
   m_SourcePrefab: {fileID: 100100000, guid: 9f5bf16f97b797e4e8a252e2ea3e6024, type: 3}
 --- !u!1 &1152478045279716219 stripped
 GameObject:
@@ -127,3 +130,17 @@ MonoBehaviour:
   floatingPlantPrefab: {fileID: 1152478045279716219, guid: 9448dafd3444f274b8b30271248e1976, type: 3}
   spawnOffsetY: 0.5
   randomForce: 2
+--- !u!114 &1987842598054130459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152478045279716219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bdaf808bcb200744b5b0b6a98f84c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionOffset: {x: 0, y: 0, z: 0}
+  rotationOffset: {x: 90, y: 0, z: 0}
