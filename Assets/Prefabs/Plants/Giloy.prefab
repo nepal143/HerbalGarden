@@ -78,6 +78,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 48550f8e28978464bb207f55ede37ac8, type: 3}
       insertIndex: -1
+      addedObject: {fileID: -6573310150088316737}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 48550f8e28978464bb207f55ede37ac8, type: 3}
+      insertIndex: -1
       addedObject: {fileID: -8104959334747751046}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 48550f8e28978464bb207f55ede37ac8, type: 3}
       insertIndex: -1
@@ -88,6 +91,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 48550f8e28978464bb207f55ede37ac8, type: 3}
   m_PrefabInstance: {fileID: 6012371109432967109}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6573310150088316737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6895383191366894228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bdaf808bcb200744b5b0b6a98f84c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionOffset: {x: 0, y: 0, z: 0}
+  rotationOffset: {x: 90, y: 0, z: 0}
 --- !u!65 &-8104959334747751046
 BoxCollider:
   m_ObjectHideFlags: 0
