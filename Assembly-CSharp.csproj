@@ -115,6 +115,7 @@
     <Compile Include="Assets\Scripts\MayurKiScripts\DiseaseSelectionButton.cs" />
     <Compile Include="Assets\Scripts\MayurKiScripts\PlantCollisionTracker.cs" />
     <Compile Include="Assets\Ash\UI\UI\scripts\SceneChanger.cs" />
+    <Compile Include="Assets\Prefabs\Plants\OffsetInstantion.cs" />
     <Compile Include="Assets\Scripts\NepalKiScripts\Plant\HoverPlant.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
