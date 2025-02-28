@@ -4,20 +4,21 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class SceneChanger : MonoBehaviour
 {
-    // Name of the scene you want to load
-    public string sceneName;
+    public string sceneName; // Name of the scene to load
 
-    // This function will be triggered when the button is pressed
     public void ChangeScene()
     {
-        // Check if the scene name is not empty or null
-        if (!string.IsNullOrEmpty(sceneName))
+        // Get the current active scene name
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        // Check if the sceneName is set and is different from the current scene
+        if (!string.IsNullOrEmpty(sceneName) && sceneName != currentScene)
         {
             SceneManager.LoadScene(sceneName);
         }
         else
         {
-            Debug.LogWarning("Scene name is not set in the inspector!");
+            Debug.LogWarning("Scene name is not set or is the same as the current scene!");
         }
     }
 
