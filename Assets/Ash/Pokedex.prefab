@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 6722313854891039626}
   m_Layer: 5
   m_Name: Scientific Name
-  m_TagString: Untagged
+  m_TagString: ScientificNameText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -655,7 +655,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 100
-  uiManager: {fileID: 0}
 --- !u!1 &6871177456957578252
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,7 +945,7 @@ GameObject:
   - component: {fileID: 9139165010374161819}
   m_Layer: 5
   m_Name: Benefit
-  m_TagString: Untagged
+  m_TagString: BenefitsText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1080,7 +1079,7 @@ GameObject:
   - component: {fileID: 4199457141219051494}
   m_Layer: 5
   m_Name: Name
-  m_TagString: Untagged
+  m_TagString: PlantNameText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1214,7 +1213,7 @@ GameObject:
   - component: {fileID: 5013714191375540640}
   m_Layer: 5
   m_Name: Uses
-  m_TagString: Untagged
+  m_TagString: UsesText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
