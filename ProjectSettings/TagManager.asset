@@ -30,6 +30,11 @@ TagManager:
   - Turmeric
   - Undefined
   - Pokedex
+  - UIManager
+  - PlantNameText
+  - ScientificNameText
+  - UsesText
+  - BenefitsText
   layers:
   - Default
   - TransparentFX

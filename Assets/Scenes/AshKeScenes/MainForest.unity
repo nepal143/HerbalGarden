@@ -5511,7 +5511,7 @@ GameObject:
   - component: {fileID: 418067524}
   m_Layer: 0
   m_Name: UI Manager
-  m_TagString: Untagged
+  m_TagString: UIManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5528,10 +5528,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90d8341d8bb0754f9322c3fb565cf56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
-  scientificNameText: {fileID: 0}
-  usesText: {fileID: 0}
-  benefitsText: {fileID: 0}
 --- !u!4 &418067525
 Transform:
   m_ObjectHideFlags: 0
