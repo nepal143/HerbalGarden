@@ -847,8 +847,8 @@ GameObject:
   - component: {fileID: 5283888173360326754}
   - component: {fileID: 5203807829646626963}
   m_Layer: 0
-  m_Name: Pokedex 1
-  m_TagString: Untagged
+  m_Name: Pokedex
+  m_TagString: Pokedex
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
