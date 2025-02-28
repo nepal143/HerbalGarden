@@ -26,7 +26,7 @@ public class PlantSpawner : MonoBehaviour
         foreach (Transform spawnPoint in spawnPoints)
         {
             GameObject selectedPlant = plantPrefabs[Random.Range(0, plantPrefabs.Length)];
-            GameObject newPlant = Instantiate(selectedPlant, spawnPoint.position, Quaternion.Euler(-90, 0, 0));
+            GameObject newPlant = Instantiate(selectedPlant, spawnPoint.position, Quaternion.Euler(0, 0, 0));
             spawnedPlants.Add(newPlant);
         }
     }
