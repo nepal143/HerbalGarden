@@ -8,6 +8,15 @@ public class EnableUIOnZRotation : MonoBehaviour
     [Tooltip("The UI GameObject to enable or disable.")]
     public GameObject uiElement;
 
+    [Tooltip("Check to enable Clockwise detection, uncheck for Anti-Clockwise.")]
+    public bool isClockwise = false; // Default: Anti-Clockwise
+
+    private void Start()
+    {
+        if (uiElement != null)
+            uiElement.SetActive(false); // Ensure UI is hidden at start
+    }
+
     private void Update()
     {
         if (handObject == null || uiElement == null)
@@ -23,14 +32,16 @@ public class EnableUIOnZRotation : MonoBehaviour
         if (handRotationZ > 180)
             handRotationZ -= 360;
 
-        // Enable or disable the UI based on the Z rotation range
-        if (handRotationZ <= -60 && handRotationZ >= -180)
+        // Enable or disable UI based on rotation direction
+        if (isClockwise)
         {
-            uiElement.SetActive(true); // Enable the UI
+            // UI appears when rotating clockwise between 60° and 180°
+            uiElement.SetActive(handRotationZ >= 60 && handRotationZ <= 180);
         }
         else
         {
-            uiElement.SetActive(false); // Disable the UI
+            // UI appears when rotating counterclockwise between -60° and -180°
+            uiElement.SetActive(handRotationZ <= -60 && handRotationZ >= -180);
         }
     }
 }

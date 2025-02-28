@@ -3424,6 +3424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handObject: {fileID: 9014170783705847996}
   uiElement: {fileID: 8180870924780371956}
+  isClockwise: 1
 --- !u!20 &9014170783809206330 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1767192439, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -3453,6 +3454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handObject: {fileID: 9014170785475729501}
   uiElement: {fileID: 730577510350447220}
+  isClockwise: 0
 --- !u!4 &9014170785475729501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 202364688, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
