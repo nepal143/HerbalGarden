@@ -343,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handObject: {fileID: 297700678477857824}
   uiElement: {fileID: 8294198943365938697}
+  isClockwise: 0
 --- !u!1 &297700680041899073
 GameObject:
   m_ObjectHideFlags: 0
